@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_ajustes.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_biceps.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_bicicleta.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_cinta.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_dominadas.xml" value="0.2966485507246377" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_ehpresshorizontalalternado.xml" value="0.2966485507246377" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_ehpushups.xml" value="0.2966485507246377" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_ejercicios.xml" value="0.18064516129032257" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_ejercicios_zona_inferior.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_ejercicios_zona_superior.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_espalda.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_extensionrodillaaunapiernaconmaquina.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_extensionrodillasenprensa.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_gemeloaunapierna.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_globetsquat.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_hipconbarraapoyadoenbanca.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_main.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_main2.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_pesomuertorodillasextendidas.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_press.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_pressbancaplano.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_pressfrancesmancuerna.xml" value="0.2966485507246377" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_principal.xml" value="0.25" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_pulloverconmancuerna.xml" value="0.2966485507246377" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_remo_con_barra.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_remoaunamano.xml" value="0.2966485507246377" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_rutina.xml" value="0.2966485507246377" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sentadillaenmultipower.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion1_aperturasbancoplano.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion1_cardio.xml" value="0.2966485507246377" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion1_curlbiceps.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion1_curlbizeps.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion1_press.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion1_pressfrances.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion1_pulloverconmancuerna.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion1pressbancaplano.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion1remoinclinado.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion2_extensionrodillasenprensa.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion2_extentensionrodillaaunapierna.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion2_hipthrustconbarra.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion2pesomuertorodillasextendidas.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion3_dominadas.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion3_ehpresshorizontal.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion3_ehpushups.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion3_remoaunamano.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion4_gemeloaunapierna.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion4_globetsquat.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion4_sentadillaenmultipower.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_sesion4_zancadahaciaatras.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_zancadahaciaatras.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/fragment_menu.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP_final/app/src/main/res/layout/activity_aperturabancoplano.xml" value="0.2604166666666667" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP_final/app/src/main/res/layout/activity_ejercicios_zona_superior.xml" value="0.28442028985507245" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.proyectofp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ProyectoFP">
+        <activity
+            android:name=".Cinta"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion4Gemeloaunapierna"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion4Globetsquat"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion4Zancadahaciaatras"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion4Sentadillaenmultipower"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion3Remoaunamano"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion3Ehpushups"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion3Dominadas"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion3Ehpresshorizontal"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion2Hipthrustconbarra"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion2pesomuertorodillasextendidas"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion2Extensionrodillasenprensa"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion2Extentensionrodillaaunapierna"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion1Pressfrances"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion1Curlbiceps"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion1Pulloverconmancuerna"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion1Aperturasbancoplano"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion1Press"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion1remoinclinado"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion1pressbancaplano"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion1Cardio"
+            android:exported="false" />
+        <activity
+            android:name=".Rutina"
+            android:exported="false" />
+        <activity
+            android:name=".Remoaunamano"
+            android:exported="false" />
+        <activity
+            android:name=".Ehpresshorizontalalternado"
+            android:exported="false" />
+        <activity
+            android:name=".Ehpushups"
+            android:exported="false" />
+        <activity
+            android:name=".Dominadas"
+            android:exported="false" />
+        <activity
+            android:name=".Pressfrancesmancuerna"
+            android:exported="false" />
+        <activity
+            android:name=".Pulloverconmancuerna"
+            android:exported="false" />
+        <activity
+            android:name=".Aperturabancoplano"
+            android:exported="false" />
+        <activity
+            android:name=".Press"
+            android:exported="false" />
+        <activity
+            android:name=".Pressbancaplano"
+            android:exported="false" />
+        <activity
+            android:name=".Gemeloaunapierna"
+            android:exported="false" />
+        <activity
+            android:name=".Globetsquat"
+            android:exported="false" />
+        <activity
+            android:name=".Zancadahaciaatras"
+            android:exported="false" />
+        <activity
+            android:name=".Sentadillaenmultipower"
+            android:exported="false" />
+        <activity
+            android:name=".Extensionrodillasenprensa"
+            android:exported="false" />
+        <activity
+            android:name=".Extensionrodillaaunapiernaconmaquina"
+            android:exported="false" />
+        <activity
+            android:name=".Hipconbarraapoyadoenbanca"
+            android:exported="false" />
+        <activity
+            android:name=".Pesomuertorodillasextendidas"
+            android:exported="false" />
+        <activity
+            android:name=".Remo_con_barra"
+            android:exported="false" />
+        <activity
+            android:name=".Bicicleta"
+            android:exported="false" />
+        <activity
+            android:name=".Ejercicios_Cuerpo_Entero"
+            android:exported="false" />
+        <activity
+            android:name=".Ejercicios_Cardio"
+            android:exported="false" />
+        <activity
+            android:name=".Ejercicios_Zona_Inferior"
+            android:exported="false" />
+        <activity
+            android:name=".Ejercicios_Zona_Superior"
+            android:exported="false" />
+        <activity
+            android:name=".Biceps"
+            android:exported="false" />
+        <activity
+            android:name=".Ejercicios"
+            android:exported="false" />
+        <activity
+            android:name=".Ajustes"
+            android:exported="false" />
+        <activity
+            android:name=".principal"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
