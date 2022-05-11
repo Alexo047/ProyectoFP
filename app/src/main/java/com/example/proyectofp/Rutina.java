@@ -19,11 +19,21 @@ Button BotonSesion4;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rutina);
         BotonSesion1= findViewById(R.id.BSesion1);
+        BotonSesion2=findViewById(R.id.BSesion2);
+        BotonSesion3=findViewById(R.id.BSesion3);
+        BotonSesion4=findViewById(R.id.BSesion4);
         BotonSesion1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent Sesion1 = new Intent(Rutina.this, Sesion1Cardio.class);
                 startActivity(Sesion1);
+            }
+        });
+        BotonSesion2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Sesion2 = new Intent(Rutina.this, Sesion2Cardio.class);
+                startActivity(Sesion2);
             }
         });
     }
