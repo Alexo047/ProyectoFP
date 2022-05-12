@@ -123,6 +123,7 @@
     <string name="TerminarSesion">Terminar Sesión</string>
     <string name="Cinta">Cinta</string>
     <string name="ExplicacionCinta">Debes calentar antes de realizar el ejercicio, intercala intervalos de carrera con momentos más suaves de trote y aumenta progresivamente el tiempo de duración de entrenamiento cada semana. No intentes abarcarlo todo el primer día.</string>
-
-
+    <string name="Eliptica">Eliptica</string>
+    <string name="ExplicacionEliptica">Debes colocarte con un pie en el pedal y al empezar con el ejercicio debes poner un pie en cada pedal como si estubieras subiendo escalones</string>
+    <string name="Sesion3Ehpushups">Eh- push ups</string>
 </resources>

@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoFP">
         <activity
+            android:name=".Eliptica"
+            android:exported="false" />
+        <activity
+            android:name=".Sesion3Cardio"
+            android:exported="false" />
+        <activity
             android:name=".Sesion2Cardio"
             android:exported="false" />
         <activity
