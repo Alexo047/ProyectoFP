@@ -43,5 +43,12 @@ Button BotonSesion4;
                 startActivity(Sesion3);
             }
         });
+        BotonSesion4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Sesion4 = new Intent(Rutina.this, Sesion4Cardio.class);
+                startActivity(Sesion4);
+            }
+        });
     }
 }
