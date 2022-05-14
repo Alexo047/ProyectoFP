@@ -128,4 +128,11 @@
     <string name="Sesion3Ehpushups">Eh- push ups</string>
     <string name="JumpingJacks">Jumping jacks</string>
     <string name="ExplicacionJumpingJacks">primero, colócate de pie, con las piernas pegadas y los brazos relajados para realizar "jumping jacks". Consiste en separar tus piernas de un salto y al mismo tiempo subir los brazos, de manera que tus manos se toquen encima de tu ca beza. Haz 8 repeticiones antes de pasar al siguiente ejercicio</string>
+    <string name="TextoIMC">¿Cual es tu índice de masa corporal?</string>
+    <string name="BotonIMC">Calcular</string>
+    <string name="CerrarSesion">Cerrar sesión</string>
+
+
+
+
 </resources>
