@@ -131,8 +131,12 @@
     <string name="TextoIMC">¿Cual es tu índice de masa corporal?</string>
     <string name="BotonIMC">Calcular</string>
     <string name="CerrarSesion">Cerrar sesión</string>
-
-
+    <string name="IMC">Indice de masa corporal</string>
+    <string name="Altura">Introduce su altura: </string>
+    <string name="Peso">Introduce su peso: </string>
+    <string name="Centimetros">En centimetros </string>
+    <string name="Gramos">En Kilogramos </string>
+    <string name="Nada"></string>
 
 
 </resources>

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoFP">
         <activity
+            android:name=".CalcularIMC"
+            android:exported="false" />
+        <activity
             android:name=".Sesion4Cardio"
             android:exported="false" />
         <activity
