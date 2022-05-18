@@ -25,11 +25,10 @@ public class CalcularIMC extends AppCompatActivity {
         BIMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int ValorAltura= Integer.parseInt(TextoALtura.getText().toString());
-                int ValorPeso= Integer.parseInt(TextoPeso.getText().toString());
-                int valorAlturaAlcuadrado= ValorAltura * ValorAltura;
-                int resulFinal = ValorPeso / valorAlturaAlcuadrado;
-                BIMC.setVisibility(View.GONE);
+                double ValorAltura= Integer.parseInt(TextoALtura.getText().toString());
+                double ValorPeso= Integer.parseInt(TextoPeso.getText().toString());
+                double valorAlturaAlcuadrado= ValorAltura * ValorAltura;
+                double resulFinal = ValorPeso / valorAlturaAlcuadrado;
                 TextoResultado.setText("Su IMC es: "+ resulFinal);
 
             }
