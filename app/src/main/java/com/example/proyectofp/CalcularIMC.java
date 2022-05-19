@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class CalcularIMC extends AppCompatActivity {
 
     Button BIMC;
@@ -25,11 +27,14 @@ public class CalcularIMC extends AppCompatActivity {
         BIMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double ValorAltura= Integer.parseInt(TextoALtura.getText().toString());
-                double ValorPeso= Integer.parseInt(TextoPeso.getText().toString());
-                double valorAlturaAlcuadrado= ValorAltura * ValorAltura;
-                double resulFinal = ValorPeso / valorAlturaAlcuadrado;
-                TextoResultado.setText("Su IMC es: "+ resulFinal);
+                DecimalFormat decimalFormat = new DecimalFormat("#.0");
+                float ValorAltura= Integer.parseInt(TextoALtura.getText().toString());
+                float ValorPeso= Integer.parseInt(TextoPeso.getText().toString());
+                float valorAlturaMetros= ValorAltura / 100;
+                float valorAlturaAlcuadrado= valorAlturaMetros * valorAlturaMetros;
+                float resulFinal = ValorPeso / valorAlturaAlcuadrado;
+                String FinalIMC = decimalFormat.format(resulFinal);
+                TextoResultado.setText("Su IMC es: "+ FinalIMC);
 
             }
         });

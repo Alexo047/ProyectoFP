@@ -325,7 +325,6 @@
                 app:srcCompat="@drawable/remoaunamano" />
 
 
-
         </LinearLayout>
 
     </ScrollView>
