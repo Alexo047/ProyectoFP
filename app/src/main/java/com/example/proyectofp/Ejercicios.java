@@ -20,8 +20,8 @@ public class Ejercicios extends AppCompatActivity {
     }
     public void bicicleta(View view)
     {
-        Intent bicicleta = new Intent(this, Bicicleta.class);
-        startActivity(bicicleta);
+        Intent cardio = new Intent(this, Ejercicios_Cardio.class);
+        startActivity(cardio);
     }
 
     public void zonaInferior(View view)

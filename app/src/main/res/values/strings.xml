@@ -137,4 +137,11 @@
     <string name="Centimetros">En centimetros </string>
     <string name="Gramos">En Kilogramos </string>
     <string name="Nada"></string>
+    <string name="DescripcionBicicleta">Imagen de la bicicleta</string>
+    <string name="bicicleta">Bicicleta</string>
+    <string name="cinta">Cinta</string>
+    <string name="eliptica">Eliptica</string>
+    <string name="DescripcionCinta">Imagen de la cinta</string>
+    <string name="DescripcionEliptica">Imagen de la eliptica</string>
+
 </resources>
