@@ -143,5 +143,13 @@
     <string name="eliptica">Eliptica</string>
     <string name="DescripcionCinta">Imagen de la cinta</string>
     <string name="DescripcionEliptica">Imagen de la eliptica</string>
+    <string name="DescripcionPesoMuerto">Imagen de Peso muerto rodillas extendidas</string>
+    <string name="DescripcionHipthrust">Imagen de hip thrust con barra apoyado en banca</string>
+    <string name="DescripcionExtensionRodilla">Imagen de Extension rodilla a una pierna con maquina</string>
+    <string name="DescripcionExtensionRodillaprensa">Imagen de Extension rodilla en prensa</string>
+    <string name="DescripcionSentadillaMultipower">Imagen de Sentadilla en multipower</string>
+    <string name="DescripcionZancadaHaciaAtras">Imagen de Zancada hacia atrás</string>
+    <string name="DescripcionGlobetSquat">Imagen de Globet squat</string>
+    <string name="DescripcionGemeloAUnaPierna">Imagen de Gemelo a una pierna</string>
 
 </resources>

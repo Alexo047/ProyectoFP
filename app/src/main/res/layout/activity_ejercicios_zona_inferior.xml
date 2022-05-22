@@ -16,7 +16,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
@@ -33,18 +33,20 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/imageView1"
                 android:layout_width="match_parent"
-                android:layout_height="175dp"
-                android:onClick="pesomuertorodillasextendidas"
+                android:layout_height="151dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/DescripcionPesoMuerto"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.064"
-                app:srcCompat="@drawable/peso_muerto_rodillas_extendidas" />
+                app:srcCompat="@drawable/peso_muerto_rodillas_extendidas"
+                tools:ignore="ImageContrastCheck" />
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
@@ -59,11 +61,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
-                android:onClick="hipconbarrapoyadoenbanca"
+                android:scaleType="fitXY"
+                android:contentDescription="@string/DescripcionHipthrust"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -86,11 +89,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/imageView3"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
-                android:onClick="extensionrodillaaunapierna"
+                android:scaleType="fitXY"
+                android:contentDescription="@string/DescripcionExtensionRodilla"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -113,11 +117,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/imageView4"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
-                android:onClick="extensionrodillasenprensa"
+                android:scaleType="fitXY"
+                android:contentDescription="@string/DescripcionExtensionRodillaprensa"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -140,11 +145,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/imageView5"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
-                android:onClick="sentadillamultipower"
+                android:scaleType="fitXY"
+                android:contentDescription="@string/DescripcionSentadillaMultipower"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -167,11 +173,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/imageView6"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
-                android:onClick="zancadahaciaatras"
+                android:scaleType="fitXY"
+                android:contentDescription="@string/DescripcionZancadaHaciaAtras"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -194,11 +201,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/imageView7"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
-                android:onClick="globetsquat"
+                android:scaleType="fitXY"
+                android:contentDescription="@string/DescripcionGlobetSquat"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -221,11 +229,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/imageView8"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
-                android:onClick="gemeloaunapierna"
+                android:scaleType="fitXY"
+                android:contentDescription="@string/DescripcionGemeloAUnaPierna"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
