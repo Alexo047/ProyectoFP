@@ -151,5 +151,7 @@
     <string name="DescripcionZancadaHaciaAtras">Imagen de Zancada hacia atrás</string>
     <string name="DescripcionGlobetSquat">Imagen de Globet squat</string>
     <string name="DescripcionGemeloAUnaPierna">Imagen de Gemelo a una pierna</string>
+    <string name="DescripcionCurl">Imagen de Curl</string>
+    <string name="DescripcionRemo">Imagen de Remo con barra</string>
 
 </resources>
