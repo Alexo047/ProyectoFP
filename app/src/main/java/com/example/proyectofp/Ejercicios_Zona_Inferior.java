@@ -5,53 +5,89 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 
 public class Ejercicios_Zona_Inferior extends AppCompatActivity {
+
+    ImageButton BPesomuertorodillasextendidas;
+    ImageButton BHipThurst;
+    ImageButton BExtensionRodillaaUnaPierna;
+    ImageButton BExtensionRodillaEnPrensa;
+    ImageButton BSentadillaEnMultipower;
+    ImageButton BZancadaHaciaAtras;
+    ImageButton BGlobetSquat;
+    ImageButton BGemeloAUnaPierna;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ejercicios_zona_inferior);
-    }
-    public void pesomuertorodillasextendidas(View view)
-    {
-        Intent pesomuerto = new Intent(this, Pesomuertorodillasextendidas.class);
-        startActivity(pesomuerto);
+        BPesomuertorodillasextendidas=findViewById(R.id.BotonPesoMuerto);
+        BHipThurst=findViewById(R.id.BotonHipThrust);
+        BExtensionRodillaaUnaPierna=findViewById(R.id.BotonExtensionconbarra);
+        BExtensionRodillaEnPrensa=findViewById(R.id.BotonExtensionEnPrensa);
+        BSentadillaEnMultipower=findViewById(R.id.BotonSentadillaEnMultipower);
+        BZancadaHaciaAtras=findViewById(R.id.BotonZancadaHaciaAtras);
+        BGlobetSquat=findViewById(R.id.BotonGlobetSquat);
+        BGemeloAUnaPierna=findViewById(R.id.BotonGemeloAUnaPierna);
+        BPesomuertorodillasextendidas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent PesoMuerto = new Intent(Ejercicios_Zona_Inferior.this, Pesomuertorodillasextendidas.class);
+                startActivity(PesoMuerto);
+            }
+        });
+        BHipThurst.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent HipThrust = new Intent(Ejercicios_Zona_Inferior.this, Hipconbarraapoyadoenbanca.class);
+                startActivity(HipThrust);
+            }
+        });
+        BExtensionRodillaaUnaPierna.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ExtensionRodilla = new Intent(Ejercicios_Zona_Inferior.this, Extensionrodillaaunapiernaconmaquina.class);
+                startActivity(ExtensionRodilla);
+            }
+        });
+        BExtensionRodillaEnPrensa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ExtensionEnPrensa = new Intent(Ejercicios_Zona_Inferior.this, Extensionrodillasenprensa.class);
+                startActivity(ExtensionEnPrensa);
+            }
+        });
+        BSentadillaEnMultipower.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent SentadillaEnMultipower = new Intent(Ejercicios_Zona_Inferior.this, Sentadillaenmultipower.class);
+                startActivity(SentadillaEnMultipower);
+            }
+        });
+        BZancadaHaciaAtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ZancadaHaciaAtras = new Intent(Ejercicios_Zona_Inferior.this, Zancadahaciaatras.class);
+                startActivity(ZancadaHaciaAtras);
+            }
+        });
+        BGlobetSquat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent GlobetSquat = new Intent(Ejercicios_Zona_Inferior.this, Globetsquat.class);
+                startActivity(GlobetSquat);
+            }
+        });
+        BGemeloAUnaPierna.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent GemeloAUnaPierna = new Intent(Ejercicios_Zona_Inferior.this, Gemeloaunapierna.class);
+                startActivity(GemeloAUnaPierna);
+            }
+        });
+
+
     }
 
-    public void hipconbarrapoyadoenbanca(View view)
-    {
-        Intent hipconbarra = new Intent(this, Hipconbarraapoyadoenbanca.class);
-        startActivity(hipconbarra);
-    }
-    public void extensionrodillaaunapierna(View view)
-    {
-        Intent extension = new Intent(this, Extensionrodillaaunapiernaconmaquina.class);
-        startActivity(extension);
-    }
-    public void extensionrodillasenprensa(View view)
-    {
-        Intent prensa = new Intent(this, Extensionrodillasenprensa.class);
-        startActivity(prensa);
-    }
-    public void sentadillamultipower(View view)
-    {
-        Intent sentadilla = new Intent(this, Sentadillaenmultipower.class);
-        startActivity(sentadilla);
-    }
-    public void zancadahaciaatras(View view)
-    {
-        Intent zancada = new Intent(this, Zancadahaciaatras.class);
-        startActivity(zancada);
-    }
-    public void globetsquat(View view)
-    {
-        Intent globet = new Intent(this, Globetsquat.class);
-        startActivity(globet);
-    }
-    public void gemeloaunapierna(View view)
-    {
-        Intent gemelo = new Intent(this, Gemeloaunapierna.class);
-        startActivity(gemelo);
-    }
 }

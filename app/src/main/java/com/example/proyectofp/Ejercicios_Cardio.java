@@ -11,17 +11,35 @@ import android.widget.ImageButton;
 public class Ejercicios_Cardio extends AppCompatActivity {
 
     ImageButton Bbicicleta;
+    ImageButton Bcinta;
+    ImageButton Beliptica;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ejercicios_cardio);
         Bbicicleta=findViewById(R.id.ImagenBicicleta);
+        Bcinta=findViewById(R.id.ImagenCinta);
+        Beliptica=findViewById(R.id.ImagenEliptica);
         Bbicicleta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent bicicleta = new Intent(Ejercicios_Cardio.this, Bicicleta.class);
                 startActivity(bicicleta);
+            }
+        });
+        Bcinta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cinta = new Intent(Ejercicios_Cardio.this, Cinta.class);
+                startActivity(cinta);
+            }
+        });
+        Beliptica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent eliptica = new Intent(Ejercicios_Cardio.this, Eliptica .class);
+                startActivity(eliptica);
             }
         });
     }

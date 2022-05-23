@@ -34,7 +34,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/imageView1"
+                android:id="@+id/BotonPesoMuerto"
                 android:layout_width="match_parent"
                 android:layout_height="151dp"
                 android:scaleType="centerCrop"
@@ -62,7 +62,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/imageView2"
+                android:id="@+id/BotonHipThrust"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:scaleType="fitXY"
@@ -90,7 +90,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/imageView3"
+                android:id="@+id/BotonExtensionconbarra"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:scaleType="fitXY"
@@ -118,7 +118,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/imageView4"
+                android:id="@+id/BotonExtensionEnPrensa"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:scaleType="fitXY"
@@ -146,7 +146,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/imageView5"
+                android:id="@+id/BotonSentadillaEnMultipower"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:scaleType="fitXY"
@@ -174,7 +174,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/imageView6"
+                android:id="@+id/BotonZancadaHaciaAtras"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:scaleType="fitXY"
@@ -202,7 +202,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/imageView7"
+                android:id="@+id/BotonGlobetSquat"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:scaleType="fitXY"
@@ -230,7 +230,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/imageView8"
+                android:id="@+id/BotonGemeloAUnaPierna"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:scaleType="fitXY"
