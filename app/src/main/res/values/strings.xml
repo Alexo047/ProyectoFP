@@ -153,5 +153,11 @@
     <string name="DescripcionGemeloAUnaPierna">Imagen de Gemelo a una pierna</string>
     <string name="DescripcionCurl">Imagen de Curl</string>
     <string name="DescripcionRemo">Imagen de Remo con barra</string>
+    <string name="btn_iniciarSesion">Acceder</string>
+    <string name="btn_RegistrarPantalla">Registrarse</string>
+    <string name="btn_Registrarse">Registrarse</string>
+    <string name="correo">Correo</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="contrasena2">Contraseña de nuevo</string>
 
 </resources>

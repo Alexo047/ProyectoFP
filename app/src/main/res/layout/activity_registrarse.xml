@@ -4,21 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".Registrarse"
     android:background="@color/teal_200">
 
-
     <LinearLayout
-        android:layout_width="367dp"
-        android:layout_height="607dp"
+        android:layout_width="364dp"
+        android:layout_height="680dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.636"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766">
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/correo"
@@ -28,8 +25,7 @@
             android:ems="10"
             android:hint="@string/correo"
             android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:textColor="#004D40" />
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/contrasena"
@@ -41,33 +37,24 @@
             android:inputType="textPassword"
             android:minHeight="48dp" />
 
-        <Button
-            android:id="@+id/Boton_iniciarSesion"
+        <EditText
+            android:id="@+id/contrasenaConfirmacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/teal_700"
-            android:onClick="iniciarSesion"
-            android:text="@string/btn_iniciarSesion"
-            android:textColor="#000000" />
+            android:ems="10"
+            android:hint="@string/contrasena2"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:autofillHints="" />
 
         <Button
             android:id="@+id/Registrarse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/teal_700"
-            android:text="@string/btn_RegistrarPantalla"
+            android:onClick="registrarUsuario"
+            android:text="@string/btn_Registrarse"
             android:textColor="#000000" />
-    </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="186dp"
-        android:layout_height="67dp"
-        android:text="@string/Dofits"
-        android:textAlignment="center"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
