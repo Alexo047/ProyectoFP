@@ -159,5 +159,6 @@
     <string name="correo">Correo</string>
     <string name="contrasena">Contraseña</string>
     <string name="contrasena2">Contraseña de nuevo</string>
+    <string name="DescripcionIMC">Imagen de IMC</string>
 
 </resources>
