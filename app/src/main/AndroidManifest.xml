@@ -154,9 +154,6 @@
             android:name=".Bicicleta"
             android:exported="false" />
         <activity
-            android:name=".Ejercicios_Cuerpo_Entero"
-            android:exported="false" />
-        <activity
             android:name=".Ejercicios_Cardio"
             android:exported="false" />
         <activity

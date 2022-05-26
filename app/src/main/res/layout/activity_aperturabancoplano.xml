@@ -6,11 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".Aperturabancoplano"
     android:background="@color/teal_200">
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="361dp"
         android:layout_height="157dp"
         android:text="@string/Explicacionaperturabancoplano"
+        android:textColor="#004D40"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,6 +25,7 @@
         android:id="@+id/imageView"
         android:layout_width="339dp"
         android:layout_height="199dp"
+        android:contentDescription="@string/DescripcionAperturaBancoPlano"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

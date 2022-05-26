@@ -160,5 +160,14 @@
     <string name="contrasena">Contraseña</string>
     <string name="contrasena2">Contraseña de nuevo</string>
     <string name="DescripcionIMC">Imagen de IMC</string>
+    <string name="DescripcionPressBancaPlano">Imagen de Press banca plano</string>
+    <string name="DescripcionPress">Imagen de Press</string>
+    <string name="DescripcionAperturaBancoPlano">Imagen de Apertura banco plano con mancuerda</string>
+    <string name="DescripcionPulloverMancuernas">Imagen de Pullover con macuernas</string>
+    <string name="DescripcionPressFrancesMancuernas">Imagen de Press frances cn mancuernas</string>
+    <string name="DescripcionDominadas">Imagen de Dominadas</string>
+    <string name="DescripcionEhPushUps">Imagen de Eh-push ups</string>
+    <string name="DescripcionEhPressHorizontal">Imagen de Eh-press horizontal alternado</string>
+    <string name="DescripcionRemoaunamano">Imagen de Remo a una mano</string>
 
 </resources>
