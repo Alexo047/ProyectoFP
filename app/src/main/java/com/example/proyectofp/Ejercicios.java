@@ -30,10 +30,6 @@ public class Ejercicios extends AppCompatActivity {
         startActivity(inferior);
     }
 
-    public void CuerpoEntero(View view)
-    {
-        Intent entero = new Intent(this, Ejercicios_Cuerpo_Entero.class);
-        startActivity(entero);
-    }
+
 
 }

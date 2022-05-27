@@ -7,11 +7,12 @@
     tools:context=".Pesomuertorodillasextendidas"
     android:background="@color/teal_200">
 
-    <TextView
+      <TextView
         android:id="@+id/textView"
         android:layout_width="379dp"
         android:layout_height="165dp"
         android:text="@string/Explicaiónpesomuertorodillasextendidas"
+        android:textColor="#004D40"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,12 +25,14 @@
         android:id="@+id/imageView"
         android:layout_width="339dp"
         android:layout_height="199dp"
+        android:contentDescription="@string/DescripcionPesoMuerto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.605"
-        app:srcCompat="@drawable/peso_muerto_rodillas_extendidas" />
+        app:srcCompat="@drawable/peso_muerto_rodillas_extendidas"
+        tools:ignore="ImageContrastCheck" />
 
     <VideoView
         android:id="@+id/videoView"

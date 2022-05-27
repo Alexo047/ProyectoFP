@@ -13,6 +13,7 @@
         android:layout_width="381dp"
         android:layout_height="201dp"
         android:layout_marginBottom="244dp"
+        android:contentDescription="@string/DescripcionJumping"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"

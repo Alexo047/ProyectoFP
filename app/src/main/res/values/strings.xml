@@ -169,5 +169,7 @@
     <string name="DescripcionEhPushUps">Imagen de Eh-push ups</string>
     <string name="DescripcionEhPressHorizontal">Imagen de Eh-press horizontal alternado</string>
     <string name="DescripcionRemoaunamano">Imagen de Remo a una mano</string>
+    <string name="Jumping">JumpingJacks</string>
+    <string name="DescripcionJumping">Imagen de Jumping jacks</string>
 
 </resources>

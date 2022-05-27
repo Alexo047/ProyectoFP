@@ -13,6 +13,7 @@ public class Ejercicios_Cardio extends AppCompatActivity {
     ImageButton Bbicicleta;
     ImageButton Bcinta;
     ImageButton Beliptica;
+    ImageButton BJumping;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class Ejercicios_Cardio extends AppCompatActivity {
         Bbicicleta=findViewById(R.id.ImagenBicicleta);
         Bcinta=findViewById(R.id.ImagenCinta);
         Beliptica=findViewById(R.id.ImagenEliptica);
+        BJumping=findViewById(R.id.ImagenJumping);
         Bbicicleta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,8 +40,15 @@ public class Ejercicios_Cardio extends AppCompatActivity {
         Beliptica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent eliptica = new Intent(Ejercicios_Cardio.this, Eliptica .class);
+                Intent eliptica = new Intent(Ejercicios_Cardio.this, Eliptica.class);
                 startActivity(eliptica);
+            }
+        });
+        BJumping.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent jumping = new Intent(Ejercicios_Cardio.this, Jumpingjacks.class);
+                startActivity(jumping);
             }
         });
     }
