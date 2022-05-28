@@ -36,7 +36,7 @@ import java.security.Principal;
         botonregistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent registrar = new Intent(MainActivity.this, Registrarse.class);
+                Intent registrar = new Intent(MainActivity.this, Administrar.class);
                 startActivity(registrar);
             }
         });
