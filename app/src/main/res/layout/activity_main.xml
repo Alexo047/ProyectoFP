@@ -50,13 +50,13 @@
             android:text="@string/btn_iniciarSesion"
             android:textColor="#000000" />
 
-        <Button
+        <!--<Button
             android:id="@+id/Registrarse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/teal_700"
             android:text="@string/btn_RegistrarPantalla"
-            android:textColor="#000000" />
+            android:textColor="#000000" />-->
     </LinearLayout>
 
     <TextView

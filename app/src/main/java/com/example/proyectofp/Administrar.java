@@ -25,7 +25,7 @@ public class Administrar extends AppCompatActivity {
     private Switch swAdmin;
     private Button buscar, crear, eliminar, resetear, modificar;
 
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    FirebaseDatabase database = FirebaseDatabase.getInstance("https://proyectofp-23bb4-default-rtdb.europe-west1.firebasedatabase.app/");
     //DatabaseReference myRef = database.getReference("message");
 
     private FirebaseAuth firebaseAuth;
@@ -41,7 +41,10 @@ public class Administrar extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         DatabaseReference databaseReference = database.getReference("Usuarios");
-    //    databaseReference.setValue("Usuarios");
+/*        databaseReference.setValue("hola");
+
+
+        databaseReference.setValue("Usuarios");*/
 
         // databaseReference = FirebaseDatabase.getInstance().getReference("Usuarios");
 
@@ -50,7 +53,7 @@ public class Administrar extends AppCompatActivity {
         carnet=findViewById(R.id.textoCarnet);
         swAdmin=findViewById(R.id.SwitchAdmin);
         nombre=findViewById(R.id.textoNombre);
-        telefono=findViewById(R.id.textoCarnet);
+        telefono=findViewById(R.id.textoTelefono);
 
         buscar=findViewById(R.id.btnBuscar);
         crear=findViewById(R.id.btnCrear);
