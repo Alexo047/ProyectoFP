@@ -19,6 +19,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Administrar extends AppCompatActivity {
 
     private EditText correo, correo2, carnet, nombre, telefono;
@@ -77,6 +80,9 @@ public class Administrar extends AppCompatActivity {
                 final String password = correo2.getText().toString().trim();
                 final Boolean estadoAdmin = swAdmin.isChecked();
 
+
+
+
                 //final Switch swAdmin;
 
                 if(TextUtils.isEmpty(correo2U))
@@ -100,11 +106,18 @@ public class Administrar extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()){
 
-                                    String idUnico = databaseReference.push().getKey();
+                                    //String idUnico = databaseReference.push().getKey();
 
-                                    UsuariosDTO usuariosDTO = new UsuariosDTO(idUnico, correo2U, carnetU, estadoAdmin, nombreU, telefonoU);
+                                    //UsuariosDTO usuariosDTO = new UsuariosDTO(correo2U, carnetU, estadoAdmin, nombreU, telefonoU);
 
-                                    databaseReference.child(idUnico).setValue(usuariosDTO);
+                                    ///databaseReference.child(correo2U).setValue(usuariosDTO);
+                                    Map<String, Object> personaMap = new HashMap<>();
+                                    personaMap.put("Carnet", carnetU);
+                                    personaMap.put("Admin", estadoAdmin.toString());
+                                    personaMap.put("Nombre", nombreU);
+                                    personaMap.put("Telefono", telefonoU);
+
+                                    databaseReference.child(correo2U.replace(".", ",")).setValue(personaMap);
 
                                     Toast.makeText(Administrar.this, "Registo exitoso", Toast.LENGTH_LONG).show();
                                     correo2.setText("");

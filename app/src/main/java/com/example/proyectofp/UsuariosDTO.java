@@ -2,11 +2,11 @@ package com.example.proyectofp;
 
 public class UsuariosDTO {
 
-    private String id, correo2, carnet,  nombre, telefono;
+    private String  correo2, carnet,  nombre, telefono;
     private Boolean administrador;
 
-    public UsuariosDTO(String id, String correo2, String carnet, Boolean administrador, String nombre, String telefono) {
-        this.id = id;
+    public UsuariosDTO( String correo2, String carnet, Boolean administrador, String nombre, String telefono) {
+
         this.correo2 = correo2;
         this.carnet = carnet;
         this.administrador = administrador;
@@ -14,9 +14,6 @@ public class UsuariosDTO {
         this.telefono = telefono;
     }
 
-    public String getId() {
-        return id;
-    }
 
     public String getCorreo2() {
         return correo2;
