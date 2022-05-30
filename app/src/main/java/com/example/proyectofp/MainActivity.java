@@ -139,7 +139,7 @@ import java.security.Principal;
                                 public void onComplete(@NonNull Task<DataSnapshot> task) {
 
                                     if (!task.isSuccessful()) {
-                                        Log.e("firebase", "Error getting data", task.getException());
+                                        Log.e("firebase", "Error al pillar el dato admin", task.getException());
                                     }
                                     else {
                                         /*Toast.makeText(getApplicationContext(), String.valueOf(task.getResult().getValue()),

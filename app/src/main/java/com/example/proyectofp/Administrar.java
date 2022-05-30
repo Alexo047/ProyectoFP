@@ -1,8 +1,12 @@
 package com.example.proyectofp;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +20,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -32,6 +38,7 @@ public class Administrar extends AppCompatActivity {
     //DatabaseReference myRef = database.getReference("message");
 
     private FirebaseAuth firebaseAuth;
+    private FirebaseUser firebaseUser;
    // private DatabaseReference databaseReference;
 
     private ProgressDialog progressDialog;
@@ -42,7 +49,9 @@ public class Administrar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_administrar);
 
+
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
         DatabaseReference databaseReference = database.getReference("Usuarios");
 /*        databaseReference.setValue("hola");
 
@@ -64,6 +73,10 @@ public class Administrar extends AppCompatActivity {
         resetear=findViewById(R.id.btnResetear);
         modificar=findViewById(R.id.btnModificar);
 
+
+        correo2.setText(firebaseUser.getEmail());
+
+
         progressDialog = new ProgressDialog(this);
 
         crear.setOnClickListener(new View.OnClickListener() {
@@ -72,15 +85,13 @@ public class Administrar extends AppCompatActivity {
 
                 String regex = "(?:[^<>()\\[\\].,;:\\s@\"]+(?:\\.[^<>()\\[\\].,;:\\s@\"]+)*|\"[^\\n\"]+\")@(?:[^<>()\\[\\].,;:\\s@\"]+\\.)+[^<>()\\[\\]\\.,;:\\s@\"]{2,63}";
 
-                final String correoU= correo.getText().toString().trim();
+
                 final String correo2U= correo2.getText().toString().trim();
                 final String carnetU=carnet.getText().toString().trim();
                 final String nombreU=nombre.getText().toString().trim();
                 final String telefonoU=telefono.getText().toString().trim();
                 final String password = correo2.getText().toString().trim();
                 final Boolean estadoAdmin = swAdmin.isChecked();
-
-
 
 
                 //final Switch swAdmin;
@@ -144,5 +155,161 @@ public class Administrar extends AppCompatActivity {
 
             }
         });
+
+        eliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(Administrar.this, "entrando", Toast.LENGTH_LONG).show();
+                AlertDialog.Builder dialogoBorrar = new AlertDialog.Builder(Administrar.this);
+                dialogoBorrar.setTitle("¿Seguro que quieres borrar el usuario?").
+                        setMessage("Al borrar este usuario se perderán todos sus datos y " +
+                            "no se podrán recuperar ¿Continuar eliminando el usuario?").
+                                setPositiveButton("Borrar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        final String correo2U= correo2.getText().toString().trim();
+                        databaseReference.child(correo2U.replace(".", ",")).removeValue();
+                        firebaseUser.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful())
+                                {
+                                    Toast.makeText(Administrar.this, "Usuario Eliminado", Toast.LENGTH_LONG).show();
+                                }else
+                                {
+                                    Toast.makeText(Administrar.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
+
+
+                    }
+                });
+
+                dialogoBorrar.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        dialogInterface.dismiss();
+                    }
+                });
+
+                AlertDialog alertDialog = dialogoBorrar.create();
+                alertDialog.show();
+
+
+
+
+            }
+        });
+
+
+        buscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                final String correoU= correo.getText().toString().trim();
+                correo2.setText(correoU);
+
+                databaseReference.child(correoU.replace(".", ",")).child("Nombre").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+
+
+                        if (!task.isSuccessful()) {
+                            Log.e("firebase", "Error al pillar el dato admin", task.getException());
+                        }
+                        else {
+
+
+                            String datoNombre = String.valueOf(task.getResult().getValue());
+                            nombre.setText(datoNombre);
+
+
+                        }
+
+
+
+
+                    }
+                });
+
+                databaseReference.child(correoU.replace(".", ",")).child("Carnet").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+
+
+                        if (!task.isSuccessful()) {
+                            Log.e("firebase", "Error al pillar el dato Carnet", task.getException());
+                        }
+                        else {
+
+
+                            String datoCarnet = String.valueOf(task.getResult().getValue());
+                            carnet.setText(datoCarnet);
+
+
+                        }
+
+
+
+                    }
+                });
+
+                databaseReference.child(correoU.replace(".", ",")).child("Telefono").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+
+
+                        if (!task.isSuccessful()) {
+                            Log.e("firebase", "Error al pillar el dato Telefono", task.getException());
+                        }
+                        else {
+
+
+                            String datoTelefono = String.valueOf(task.getResult().getValue());
+                            telefono.setText(datoTelefono);
+
+
+                        }
+
+                    }
+                });
+
+                databaseReference.child(correoU.replace(".", ",")).child("Admin").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+
+
+                        if (!task.isSuccessful()) {
+                            Log.e("firebase", "Error al pillar el dato Admin", task.getException());
+                        } else {
+
+
+                            String datoAdmin = String.valueOf(task.getResult().getValue());
+
+                            if (datoAdmin.contains("true"))
+                            {
+                                swAdmin.setChecked(true);
+
+                            }else
+                            {
+                                swAdmin.setChecked(false);
+                            }
+
+
+                        }
+                    }
+                });
+
+
+
+
+
+
+            }
+        });
+
     }
 }
