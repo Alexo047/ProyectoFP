@@ -114,8 +114,7 @@
         android:id="@+id/btnBuscar"
         android:layout_width="407dp"
         android:layout_height="48dp"
-        android:backgroundTint="@color/black
-"
+        android:backgroundTint="@color/black"
         android:text="Buscar Usurio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,24 +124,23 @@
         app:layout_constraintVertical_bias="0.184" />
 
     <Button
-        android:id="@+id/btnResetear"
-        android:layout_width="407dp"
-        android:layout_height="48dp"
-        android:backgroundTint="@color/black
-"
-        android:text="Resetear contraseña"
+        android:id="@+id/btnEntrarApp"
+        android:layout_width="416dp"
+        android:layout_height="52dp"
+        android:backgroundTint="@color/black"
+        android:text="Entrar a la app"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.811" />
+        app:layout_constraintVertical_bias="0.945" />
 
     <Button
         android:id="@+id/btnEliminar"
         android:layout_width="407dp"
         android:layout_height="48dp"
-        android:backgroundTint="@color/black
-"
+        android:backgroundTint="@color/black"
         android:text="Eliminar Usuario"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -155,15 +153,14 @@
         android:id="@+id/btnModificar"
         android:layout_width="407dp"
         android:layout_height="48dp"
-        android:backgroundTint="@color/black
-"
+        android:backgroundTint="@color/black"
         android:text="Modificar Usuario"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.881" />
+        app:layout_constraintVertical_bias="0.811" />
 
     <Switch
         android:id="@+id/SwitchAdmin"

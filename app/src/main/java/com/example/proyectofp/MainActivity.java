@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -26,10 +27,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.security.Principal;
 
       public class MainActivity extends AppCompatActivity {
-          Button botonregistro;
+          Button botonPass;
           private EditText correo;
           private EditText contrasena;
           private FirebaseAuth mAuth;
+          FirebaseAuth auth = FirebaseAuth.getInstance();
           private String esadmin = "false";
           //FirebaseDatabase database = FirebaseDatabase.getInstance("https://proyectofp-23bb4-default-rtdb.europe-west1.firebasedatabase.app/");
           //DatabaseReference databaseReference = database.getReference("Usuarios");
@@ -44,17 +46,36 @@ import java.security.Principal;
         setContentView(R.layout.activity_main);
 
 
-        botonregistro=findViewById(R.id.Registrarse);
+        botonPass=findViewById(R.id.btnResetPass);
         correo=findViewById(R.id.correo);
         contrasena=findViewById(R.id.contrasena);
         mAuth = FirebaseAuth.getInstance();
 
 
-        botonregistro.setOnClickListener(new View.OnClickListener() {
+        botonPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent registrar = new Intent(MainActivity.this, Administrar.class);
-                startActivity(registrar);
+
+                final String correoU= correo.getText().toString().trim();
+                String emailAddress = correoU;
+
+
+                if(TextUtils.isEmpty(correoU))
+                {
+                    Toast.makeText(MainActivity.this, "El correo no puede estar vacío", Toast.LENGTH_LONG).show();
+                    correo.requestFocus();
+                    return;
+
+                }
+                Toast.makeText(MainActivity.this, "Correo enviado a: "+ correoU, Toast.LENGTH_LONG).show();
+                auth.sendPasswordResetEmail(emailAddress).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(MainActivity.this, "Correo enviado a: "+ correoU, Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
             }
         });
         //botonLogin = findViewById(R.id.LoginB);
@@ -70,6 +91,24 @@ import java.security.Principal;
           }
 
     public void iniciarSesion(View view){
+
+        final String correoU= correo.getText().toString().trim();
+        final String password = contrasena.getText().toString().trim();
+
+        if(TextUtils.isEmpty(correoU))
+        {
+            Toast.makeText(MainActivity.this, "Debes escribir el correo", Toast.LENGTH_LONG).show();
+            correo.requestFocus();
+            return;
+        }
+
+        if(TextUtils.isEmpty(password))
+        {
+            Toast.makeText(MainActivity.this, "Debes escribir la contraseña", Toast.LENGTH_LONG).show();
+            contrasena.requestFocus();
+            return;
+        }
+
         mAuth.signInWithEmailAndPassword(correo.getText().toString(), contrasena.getText().toString())
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -106,11 +145,6 @@ import java.security.Principal;
 
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(getApplicationContext(), "Inicio de sesión correcta",
-                                    Toast.LENGTH_SHORT).show();
-
-                            Toast.makeText(getApplicationContext(), correoFinal,
-                                    Toast.LENGTH_SHORT).show();
 
                             //final String correoU= correo.getText().toString().trim();
                             /*Query queryByEmail = usersRef.orderByChild("correo2").equalTo(correoU);
@@ -142,27 +176,23 @@ import java.security.Principal;
                                         Log.e("firebase", "Error al pillar el dato admin", task.getException());
                                     }
                                     else {
-                                        /*Toast.makeText(getApplicationContext(), String.valueOf(task.getResult().getValue()),
-                                                Toast.LENGTH_LONG).show();*/
                                         esadmin = String.valueOf(task.getResult().getValue());
-                                        //Toast.makeText(getApplicationContext(), esadmin;
-                                        Toast.makeText(getApplicationContext(), "ini " +esadmin,
-                                                Toast.LENGTH_LONG).show();
-                                        //Log.d("ini", esadmin);
-
-                                        /*String value = String.valueOf(databaseReference.child("Usuarios").child("admin5678@gmail,com").child("Nombre"));
-                                        Toast.makeText(getApplicationContext(), "valor es  " +value,
-                                                Toast.LENGTH_LONG).show();
-*/
                                         if (esadmin.contains("true"))
                                         {
                                             Intent admin = new Intent(getApplicationContext(), Administrar.class);
                                             startActivity(admin);
-                                        }else
+
+                                        }else if  (esadmin.contains("false"))
                                         {
                                             Intent noadmin = new Intent(getApplicationContext(), principal.class);
                                             startActivity(noadmin);
 
+                                        }else
+                                        {
+                                            Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrectos",
+                                                    Toast.LENGTH_LONG).show();
+                                            correo.setText("");
+                                            contrasena.setText("");
                                         }
 
                                         //Log.d("firebase", String.valueOf(task.getResult().getValue()));
@@ -191,12 +221,16 @@ import java.security.Principal;
                             //updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(getApplicationContext(), "Authentication failed.",
+                            Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrectos.",
                                     Toast.LENGTH_SHORT).show();
+                            correo.setText("");
+                            contrasena.setText("");
                             //updateUI(null);
                         }
                     }
                 });
+
+
     }
 
 

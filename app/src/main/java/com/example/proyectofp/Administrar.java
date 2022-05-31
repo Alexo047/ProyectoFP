@@ -17,13 +17,19 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,13 +38,14 @@ public class Administrar extends AppCompatActivity {
 
     private EditText correo, correo2, carnet, nombre, telefono;
     private Switch swAdmin;
-    private Button buscar, crear, eliminar, resetear, modificar;
+    private Button buscar, crear, eliminar, entrarApp, modificar;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://proyectofp-23bb4-default-rtdb.europe-west1.firebasedatabase.app/");
     //DatabaseReference myRef = database.getReference("message");
 
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
+    Boolean existe = true;
    // private DatabaseReference databaseReference;
 
     private ProgressDialog progressDialog;
@@ -70,11 +77,13 @@ public class Administrar extends AppCompatActivity {
         buscar=findViewById(R.id.btnBuscar);
         crear=findViewById(R.id.btnCrear);
         eliminar=findViewById(R.id.btnEliminar);
-        resetear=findViewById(R.id.btnResetear);
+        entrarApp=findViewById(R.id.btnEntrarApp);
         modificar=findViewById(R.id.btnModificar);
 
+        //correo2.setText(firebaseUser.getEmail());
 
-        correo2.setText(firebaseUser.getEmail());
+
+
 
 
         progressDialog = new ProgressDialog(this);
@@ -135,11 +144,7 @@ public class Administrar extends AppCompatActivity {
                                     carnet.setText("");
                                     nombre.setText("");
                                     telefono.setText("");
-
-                                    finish();
-
-
-
+                                    swAdmin.setChecked(false);
 
 
                                 }else{
@@ -160,7 +165,36 @@ public class Administrar extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(Administrar.this, "entrando", Toast.LENGTH_LONG).show();
+
+
+                final String correo2U= correo2.getText().toString().trim();
+                final String correoU= correo.getText().toString().trim();
+
+                if(TextUtils.isEmpty(correo2U))
+                {
+                    Toast.makeText(Administrar.this, "Debes escribir el correo para eliminarlo", Toast.LENGTH_LONG).show();
+                    correo2.requestFocus();
+                    return;
+                }
+
+                if(TextUtils.isEmpty(correoU))
+                {
+                    Toast.makeText(Administrar.this, "Debes buscar el correo", Toast.LENGTH_LONG).show();
+                    correo.requestFocus();
+                    return;
+                }
+
+                if (!(correoU.contains(correo2U) && correo2U.contains(correoU)))
+                {
+                    Toast.makeText(Administrar.this, "Los correos no coinciden", Toast.LENGTH_LONG).show();
+                    correo.requestFocus();
+                    return;
+                }
+
+
+
+
+
                 AlertDialog.Builder dialogoBorrar = new AlertDialog.Builder(Administrar.this);
                 dialogoBorrar.setTitle("¿Seguro que quieres borrar el usuario?").
                         setMessage("Al borrar este usuario se perderán todos sus datos y " +
@@ -168,20 +202,26 @@ public class Administrar extends AppCompatActivity {
                                 setPositiveButton("Borrar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        final String correo2U= correo2.getText().toString().trim();
+
+                        /*AuthCredential credential = EmailAuthProvider
+                                .getCredential(correo2U, correo2U);
+                        firebaseUser.reauthenticate(credential);
+                        Toast.makeText(Administrar.this, correo2U, Toast.LENGTH_LONG).show();*/
+
                         databaseReference.child(correo2U.replace(".", ",")).removeValue();
-                        firebaseUser.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                        Toast.makeText(Administrar.this, "Usuario Eliminado", Toast.LENGTH_LONG).show();
+                        /*firebaseUser.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful())
                                 {
-                                    Toast.makeText(Administrar.this, "Usuario Eliminado", Toast.LENGTH_LONG).show();
+
                                 }else
                                 {
                                     Toast.makeText(Administrar.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
                                 }
                             }
-                        });
+                        });*/
 
 
                     }
@@ -210,104 +250,232 @@ public class Administrar extends AppCompatActivity {
             public void onClick(View view) {
 
                 final String correoU= correo.getText().toString().trim();
-                correo2.setText(correoU);
 
-                databaseReference.child(correoU.replace(".", ",")).child("Nombre").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                if(TextUtils.isEmpty(correoU))
+                {
+                    Toast.makeText(Administrar.this, "El correo no puede estar vacío", Toast.LENGTH_LONG).show();
+                    correo.requestFocus();
+                    return;
+                }
+
+
+
+
+
+
+                databaseReference.child(correoU.replace(".", ",")).addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        if (!snapshot.exists())
+                        {
+                            Toast.makeText(Administrar.this, "El usuario no existe", Toast.LENGTH_LONG).show();
+                            existe = false;
+                            correo2.setText("");
+                            carnet.setText("");
+                            nombre.setText("");
+                            telefono.setText("");
+                            swAdmin.setChecked(false);
 
 
-                        if (!task.isSuccessful()) {
-                            Log.e("firebase", "Error al pillar el dato admin", task.getException());
+                        }else
+                        {
+                            //existe = true;
+                            correo2.setText(correoU);
+                            databaseReference.child(correoU.replace(".", ",")).child("Nombre").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DataSnapshot> task) {
+
+
+                                    if (!task.isSuccessful()) {
+                                        Log.e("firebase", "Error al pillar el dato admin", task.getException());
+                                    }
+                                    else {
+
+
+                                        String datoNombre = String.valueOf(task.getResult().getValue());
+                                        nombre.setText(datoNombre);
+
+
+                                    }
+
+
+
+
+                                }
+                            });
+
+                            databaseReference.child(correoU.replace(".", ",")).child("Carnet").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DataSnapshot> task) {
+
+
+                                    if (!task.isSuccessful()) {
+                                        Log.e("firebase", "Error al pillar el dato Carnet", task.getException());
+                                    }
+                                    else {
+
+
+                                        String datoCarnet = String.valueOf(task.getResult().getValue());
+                                        carnet.setText(datoCarnet);
+
+
+                                    }
+
+
+
+                                }
+                            });
+
+                            databaseReference.child(correoU.replace(".", ",")).child("Telefono").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DataSnapshot> task) {
+
+
+                                    if (!task.isSuccessful()) {
+                                        Log.e("firebase", "Error al pillar el dato Telefono", task.getException());
+                                    }
+                                    else {
+
+
+                                        String datoTelefono = String.valueOf(task.getResult().getValue());
+                                        telefono.setText(datoTelefono);
+
+
+                                    }
+
+                                }
+                            });
+
+                            databaseReference.child(correoU.replace(".", ",")).child("Admin").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DataSnapshot> task) {
+
+
+                                    if (!task.isSuccessful()) {
+                                        Log.e("firebase", "Error al pillar el dato Admin", task.getException());
+                                    } else {
+
+
+                                        String datoAdmin = String.valueOf(task.getResult().getValue());
+
+                                        if (datoAdmin.contains("true"))
+                                        {
+                                            swAdmin.setChecked(true);
+
+                                        }else
+                                        {
+                                            swAdmin.setChecked(false);
+                                        }
+
+
+                                    }
+                                }
+                            });
                         }
-                        else {
-
-
-                            String datoNombre = String.valueOf(task.getResult().getValue());
-                            nombre.setText(datoNombre);
-
-
-                        }
-
 
 
 
                     }
-                });
 
-                databaseReference.child(correoU.replace(".", ",")).child("Carnet").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                     @Override
-                    public void onComplete(@NonNull Task<DataSnapshot> task) {
-
-
-                        if (!task.isSuccessful()) {
-                            Log.e("firebase", "Error al pillar el dato Carnet", task.getException());
-                        }
-                        else {
-
-
-                            String datoCarnet = String.valueOf(task.getResult().getValue());
-                            carnet.setText(datoCarnet);
-
-
-                        }
-
-
+                    public void onCancelled(@NonNull DatabaseError error) {
 
                     }
                 });
 
-                databaseReference.child(correoU.replace(".", ",")).child("Telefono").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+/*                if (existe)
+                {
+
+                }*/
+
+
+
+
+
+
+
+
+
+
+            }
+        });
+
+        modificar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                final String correoU= correo.getText().toString().trim();
+                final String correo2U= correo2.getText().toString().trim();
+                final String carnetU=carnet.getText().toString().trim();
+                final String nombreU=nombre.getText().toString().trim();
+                final String telefonoU=telefono.getText().toString().trim();
+                final String password = correo2.getText().toString().trim();
+                final Boolean estadoAdmin = swAdmin.isChecked();
+
+                if(TextUtils.isEmpty(correo2U))
+                {
+                    Toast.makeText(Administrar.this, "Debes escribir el correo para buscarlo", Toast.LENGTH_LONG).show();
+                    correo2.requestFocus();
+                    return;
+                }
+
+                if(TextUtils.isEmpty(correoU))
+                {
+                    Toast.makeText(Administrar.this, "Debes escribir el correo", Toast.LENGTH_LONG).show();
+                    correo.requestFocus();
+                    return;
+                }
+
+                if (!(correoU.contains(correo2U) && correo2U.contains(correoU)))
+                {
+                    Toast.makeText(Administrar.this, "Para cambiar un correo hay que eliminar el usuario", Toast.LENGTH_LONG).show();
+                    correo.requestFocus();
+                    return;
+                }
+
+
+
+
+                Map<String, Object> personaMap = new HashMap<>();
+                personaMap.put("Carnet", carnetU);
+                personaMap.put("Admin", estadoAdmin.toString());
+                personaMap.put("Nombre", nombreU);
+                personaMap.put("Telefono", telefonoU);
+
+                databaseReference.child(correo2U.replace(".", ",")).updateChildren(personaMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(Administrar.this, "Datos cambiados", Toast.LENGTH_LONG).show();
+                        correo2.setText("");
+                        carnet.setText("");
+                        nombre.setText("");
+                        telefono.setText("");
+                        swAdmin.setChecked(false);
 
-
-                        if (!task.isSuccessful()) {
-                            Log.e("firebase", "Error al pillar el dato Telefono", task.getException());
-                        }
-                        else {
-
-
-                            String datoTelefono = String.valueOf(task.getResult().getValue());
-                            telefono.setText(datoTelefono);
-
-
-                        }
-
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(Administrar.this, "El usuario no existe", Toast.LENGTH_LONG).show();
+                        correo2.setText("");
+                        carnet.setText("");
+                        nombre.setText("");
+                        telefono.setText("");
+                        swAdmin.setChecked(false);
                     }
                 });
 
-                databaseReference.child(correoU.replace(".", ",")).child("Admin").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DataSnapshot> task) {
 
 
-                        if (!task.isSuccessful()) {
-                            Log.e("firebase", "Error al pillar el dato Admin", task.getException());
-                        } else {
+            }
+        });
 
-
-                            String datoAdmin = String.valueOf(task.getResult().getValue());
-
-                            if (datoAdmin.contains("true"))
-                            {
-                                swAdmin.setChecked(true);
-
-                            }else
-                            {
-                                swAdmin.setChecked(false);
-                            }
-
-
-                        }
-                    }
-                });
-
-
-
-
-
-
+        entrarApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent entrarApp = new Intent(getApplicationContext(), principal.class);
+                startActivity(entrarApp);
             }
         });
 
