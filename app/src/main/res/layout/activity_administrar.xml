@@ -10,7 +10,7 @@
         android:id="@+id/textView29"
         android:layout_width="386dp"
         android:layout_height="54dp"
-        android:text="Administrar usuarios"
+        android:text="@string/Administrar"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,7 @@
         android:layout_height="48dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="Correo"
+        android:hint="@string/correo"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +32,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.114" />
+        app:layout_constraintVertical_bias="0.114"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <EditText
         android:id="@+id/textoCorreo2"
@@ -40,7 +41,7 @@
         android:layout_height="48dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="Correo"
+        android:hint="@string/correo"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -56,7 +57,7 @@
         android:layout_height="49dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="Nº Carnet"
+        android:hint="@string/Carnet"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -64,7 +65,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.408" />
+        app:layout_constraintVertical_bias="0.408"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/textoNombre"
@@ -72,7 +74,7 @@
         android:layout_height="48dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="Nombre completo"
+        android:hint="@string/NombreCompleto"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -80,7 +82,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.499"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/textoTelefono"
@@ -88,7 +91,7 @@
         android:layout_height="48dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="Telefono"
+        android:hint="@string/Telefono"
         android:inputType="phone"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -100,9 +103,8 @@
         android:id="@+id/btnCrear"
         android:layout_width="407dp"
         android:layout_height="48dp"
-        android:backgroundTint="@color/black
-"
-        android:text="Crear Usurio"
+        android:backgroundTint="@color/black"
+        android:text="@string/CrearUsuario"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -115,7 +117,7 @@
         android:layout_width="407dp"
         android:layout_height="48dp"
         android:backgroundTint="@color/black"
-        android:text="Buscar Usurio"
+        android:text="@string/Buscar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -128,7 +130,7 @@
         android:layout_width="416dp"
         android:layout_height="52dp"
         android:backgroundTint="@color/black"
-        android:text="Entrar a la app"
+        android:text="@string/EntrarApp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -141,7 +143,7 @@
         android:layout_width="407dp"
         android:layout_height="48dp"
         android:backgroundTint="@color/black"
-        android:text="Eliminar Usuario"
+        android:text="@string/Borrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -154,7 +156,7 @@
         android:layout_width="407dp"
         android:layout_height="48dp"
         android:backgroundTint="@color/black"
-        android:text="Modificar Usuario"
+        android:text="@string/ModificarUsuario"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -166,7 +168,7 @@
         android:id="@+id/SwitchAdmin"
         android:layout_width="145dp"
         android:layout_height="49dp"
-        android:text="Administrador"
+        android:text="@string/Admin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.906"

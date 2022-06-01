@@ -171,5 +171,18 @@
     <string name="DescripcionRemoaunamano">Imagen de Remo a una mano</string>
     <string name="Jumping">JumpingJacks</string>
     <string name="DescripcionJumping">Imagen de Jumping jacks</string>
+    <string name="Borrar">Borrar cuenta</string>
+    <string name="CambiarContraseña">Cambiar contraseña</string>
+    <string name="Buscar">Buscar usuario</string>
+    <string name="Admin">Administrador</string>
+    <string name="Correo">correo</string>
+    <string name="Carnet">Nº carnet</string>
+    <string name="NombreCompleto">Nombre completo</string>
+    <string name="Telefono">Telefono</string>
+    <string name="CrearUsuario">Crear usuario</string>
+    <string name="ModificarUsuario">Modificiar usuario</string>
+    <string name="EntrarApp">Entrar a la app</string>
+    <string name="Administrar">Administrar usuarios</string>
+    <string name="ResetearContraseña">Resetear contraseña</string>
 
 </resources>
