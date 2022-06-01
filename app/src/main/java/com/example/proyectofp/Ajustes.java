@@ -23,6 +23,8 @@ public class Ajustes extends AppCompatActivity {
     Button BirIMC;
     Button btnborrar;
     Button btncambiarPass;
+    Button btnCerrarSesion;
+
 
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
@@ -42,6 +44,8 @@ public class Ajustes extends AppCompatActivity {
         BirIMC=findViewById(R.id.BotonirIMC);
         btnborrar=findViewById(R.id.BotonBorrarUsuario);
         btncambiarPass=findViewById(R.id.BotonCambiarPass);
+        btnCerrarSesion=findViewById(R.id.BotonCerrarSesion);
+
         BirIMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,16 +64,21 @@ public class Ajustes extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
 
-                                databaseReference.child(firebaseUser.toString()).removeValue();
+                                String email =firebaseUser.getEmail().toString().trim();
+
+                                databaseReference.child(email.replace(".", ",")).removeValue();
+                                Toast.makeText(Ajustes.this, email, Toast.LENGTH_LONG).show();
                                 firebaseUser.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
 
                                         if (task.isSuccessful())
                                         {
-                                            Intent irMain = new Intent(Ajustes.this, MainActivity.class);
-                                            startActivity(irMain);
                                             Toast.makeText(Ajustes.this, "Cuenta eliminada", Toast.LENGTH_LONG).show();
+                                            Intent intent = new Intent(Ajustes.this, MainActivity.class);
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                            startActivity(intent);
                                         }else
                                         {
                                             Toast.makeText(Ajustes.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -101,7 +110,21 @@ public class Ajustes extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                Intent irCPass = new Intent(Ajustes.this, CambiarPass.class);
+                startActivity(irCPass);
 
+
+            }
+        });
+
+        btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(Ajustes.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
             }
         });
 

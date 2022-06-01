@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoFP">
         <activity
+            android:name=".CambiarPass"
+            android:exported="false" />
+        <activity
             android:name=".Administrar"
             android:exported="false" />
         <activity

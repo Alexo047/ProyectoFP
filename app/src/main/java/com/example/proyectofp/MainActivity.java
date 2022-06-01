@@ -191,12 +191,12 @@ import java.security.Principal;
                                         {
                                             Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrectos",
                                                     Toast.LENGTH_LONG).show();
-                                            correo.setText("");
-                                            contrasena.setText("");
                                         }
 
                                         //Log.d("firebase", String.valueOf(task.getResult().getValue()));
                                     }
+                                    correo.setText("");
+                                    contrasena.setText("");
                                 }
                             });
 
