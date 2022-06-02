@@ -33,18 +33,11 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     FirebaseAuth auth = FirebaseAuth.getInstance();
     private String esadmin = "false";
-    //FirebaseDatabase database = FirebaseDatabase.getInstance("https://proyectofp-23bb4-default-rtdb.europe-west1.firebasedatabase.app/");
-    //DatabaseReference databaseReference = database.getReference("Usuarios");
     DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://proyectofp-23bb4-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
-    //DatabaseReference usersRef = databaseReference.child("Usuarios");
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
         botonPass = findViewById(R.id.btnResetPass);
         correo = findViewById(R.id.correo);
         contrasena = findViewById(R.id.contrasena);
@@ -76,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
-        //botonLogin = findViewById(R.id.LoginB);
     }
 
     public void onStart() {
@@ -112,57 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
                             final String correoU = correo.getText().toString().trim();
                             final String correoFinal = correoU.replace(".", ",");
-
-
-
-                            /*databaseReference.child("alex@gmail,com").addValueEventListener(new ValueEventListener() {
-
-
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                                    Toast.makeText(getApplicationContext(), "casi dentro",
-                                            Toast.LENGTH_SHORT).show();
-                                    if (dataSnapshot.exists()) {
-
-                                        esadmin = dataSnapshot.child("Admin").getValue().toString();
-                                        Toast.makeText(getApplicationContext(), "dentro",
-                                                Toast.LENGTH_SHORT).show();
-
-                                    }
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError error) {
-
-                                }
-                            });*/
-
-                            // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
-
-                            //final String correoU= correo.getText().toString().trim();
-                            /*Query queryByEmail = usersRef.orderByChild("correo2").equalTo(correoU);
-                            queryByEmail.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                                @Override
-                                public void onComplete(@NonNull Task<DataSnapshot> task) {
-                                    if (task.isSuccessful()) {
-
-                                        for (DataSnapshot ds : task.getResult().getChildren()) {
-                                           // administrador = ds.child("administrador").getValue(Boolean.class);
-
-
-                                        }
-
-                                    } else {
-                                        Log.d("TAG", task.getException().getMessage()); //Don't ignore potential errors!
-                                    }
-                                }
-                            });
-                            databaseReference.child(correo2U.replace(".", ",")).setValue(personaMap);
-*/
-                            //databaseReference.child("alex@gmail,com")
-
                             databaseReference.child("Usuarios").child(correoFinal).child("Admin").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -184,32 +126,12 @@ public class MainActivity extends AppCompatActivity {
                                                     Toast.LENGTH_LONG).show();
                                         }
 
-                                        //Log.d("firebase", String.valueOf(task.getResult().getValue()));
                                     }
                                     correo.setText("");
                                     contrasena.setText("");
                                 }
                             });
 
-
-
-                            /*Toast.makeText(getApplicationContext(), "antes" + esadmin,
-                                    Toast.LENGTH_LONG).show();
-                            if (esadmin== "true")
-                            {
-                                Toast.makeText(getApplicationContext(), "Eres admin",
-                                        Toast.LENGTH_LONG).show();
-                            }else
-                            {
-                                Toast.makeText(getApplicationContext(), esadmin,
-                                        Toast.LENGTH_LONG).show();
-
-                            }*/
-
-                            /*Intent i = new Intent(getApplicationContext(), principal.class);
-                            startActivity(i);*/
-
-                            //updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrectos.",
