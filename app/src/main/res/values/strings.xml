@@ -115,10 +115,10 @@
     <string name="Sesion4Zancadahaciaatras">Zancada hacia atrás</string>
     <string name="Sesion4Globetsquats">Globet squat</string>
     <string name="Sesion4Gemeloaunapierna">Gemelo a una pierna</string>
-    <string name="Sesion1">Sesion 1</string>
-    <string name="Sesion2">Sesion 2</string>
-    <string name="Sesion3">Sesion 3</string>
-    <string name="Sesion4">Sesion 4</string>
+    <string name="Sesion1">Sesión 1</string>
+    <string name="Sesion2">Sesión 2</string>
+    <string name="Sesion3">Sesión 3</string>
+    <string name="Sesion4">Sesión 4</string>
     <string name="Sesion1Apertura">Aperturas banco plano con mancuerna</string>
     <string name="TerminarSesion">Terminar Sesión</string>
     <string name="Cinta">Cinta</string>
@@ -184,5 +184,9 @@
     <string name="EntrarApp">Entrar a la app</string>
     <string name="Administrar">Administrar usuarios</string>
     <string name="ResetearContraseña">Resetear contraseña</string>
+    <string name="Cambiar">Cambiar</string>
+    <string name="IntroducePass">Introduce la nueva contraseña</string>
+    <string name="IntroducePass2">Introduzca de nuevo la nueva contraseña</string>
+    <string name="DescripcionimgPrincipal">imagen principal de la aplicación</string>
 
 </resources>

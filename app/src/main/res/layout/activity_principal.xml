@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".principal"
-    android:background="@color/teal_200">
+    android:background="@color/verde_oscuro">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView3"
@@ -35,7 +35,7 @@
         android:id="@+id/botonderutina"
         android:layout_width="205dp"
         android:layout_height="125dp"
-        android:backgroundTint="@color/teal_700"
+        android:background="@drawable/boton_redondo"
         android:focusable="true"
         android:text="@string/rutina"
         android:textColor="#000000"
@@ -43,5 +43,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47" />
+        app:layout_constraintVertical_bias="0.278" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="271dp"
+        android:layout_height="321dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.768"
+        app:srcCompat="@drawable/ejercicio_principal"
+        android:contentDescription="@string/DescripcionimgPrincipal" />
 </androidx.constraintlayout.widget.ConstraintLayout>

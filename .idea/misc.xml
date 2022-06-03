@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_administrar.xml" value="0.33106884057971014" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/drawable/boton_redondo.xml" value="0.1935" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_administrar.xml" value="0.33" />
         <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_ajustes.xml" value="0.28442028985507245" />
         <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_aperturabancoplano.xml" value="0.29483695652173914" />
         <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_biceps.xml" value="0.28442028985507245" />
@@ -14,7 +15,7 @@
         <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_dominadas.xml" value="0.2966485507246377" />
         <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_ehpresshorizontalalternado.xml" value="0.2966485507246377" />
         <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_ehpushups.xml" value="0.2966485507246377" />
-        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_ejercicios.xml" value="0.18064516129032257" />
+        <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_ejercicios.xml" value="0.33" />
         <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_ejercicios_cardio.xml" value="0.33" />
         <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_ejercicios_cuerpo_entero.xml" value="0.35144927536231885" />
         <entry key="..\:/Users/Alexo047/AndroidStudioProjects/ProyectoFP/app/src/main/res/layout/activity_ejercicios_zona_inferior.xml" value="0.24821683309557774" />

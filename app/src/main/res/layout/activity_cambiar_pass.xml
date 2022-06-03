@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CambiarPass"
-    android:background="@color/teal_200">
+    android:background="@color/verde_oscuro">
 
     <LinearLayout
         android:layout_width="409dp"
@@ -22,21 +22,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Introduzca la nueva contraseña"
-            android:inputType="textPersonName" />
+            android:hint="@string/IntroducePass"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            tools:ignore="TextContrastCheck"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/NuevaContrasena2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Introduzca de nuevo la nueva contraseña"
-            android:inputType="textPersonName" />
+            android:hint="@string/IntroducePass2"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            tools:ignore="TextContrastCheck"
+            android:autofillHints="" />
 
         <Button
             android:id="@+id/btnNuevaPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cambiar" />
+            android:background="@drawable/boton_redondo"
+            android:text="@string/Cambiar" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

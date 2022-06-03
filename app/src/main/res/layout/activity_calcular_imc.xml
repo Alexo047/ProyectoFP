@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CalcularIMC"
-    android:background="@color/teal_200">
+    android:background="@color/verde_oscuro">
 
     <TextView
         android:id="@+id/textView2"
@@ -23,11 +23,12 @@
         android:id="@+id/imageView"
         android:layout_width="339dp"
         android:layout_height="199dp"
+        android:contentDescription="@string/DescripcionIMC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/imc"
-        android:contentDescription="@string/DescripcionIMC" />
+        tools:ignore="ImageContrastCheck" />
 
     <TextView
         android:id="@+id/textView24"
@@ -93,9 +94,9 @@
 
     <Button
         android:id="@+id/BotonIMC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/teal_700"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:background="@drawable/boton_redondo"
         android:text="@string/BotonIMC"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -110,10 +111,13 @@
         android:layout_width="301dp"
         android:layout_height="68dp"
         android:text="@string/Nada"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.552" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

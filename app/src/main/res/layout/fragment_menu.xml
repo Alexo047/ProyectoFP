@@ -10,7 +10,7 @@
 
     <Button
         android:id="@+id/botonEJ"
-        android:layout_width="136dp"
+        android:layout_width="142dp"
         android:layout_height="65dp"
         android:backgroundTint="@color/white"
         android:text="@string/botonEjercicios"
@@ -23,7 +23,7 @@
 
     <Button
         android:id="@+id/botonHome"
-        android:layout_width="136dp"
+        android:layout_width="142dp"
         android:layout_height="65dp"
         android:backgroundTint="@color/white"
         android:text="@string/botonHome"
@@ -36,7 +36,7 @@
 
     <Button
         android:id="@+id/botonPerfil"
-        android:layout_width="136dp"
+        android:layout_width="142dp"
         android:layout_height="65dp"
         android:backgroundTint="@color/white"
         android:text="@string/botonUser"
