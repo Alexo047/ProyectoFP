@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     Button botonPass;
     private EditText correo;
     private EditText contrasena;
+    Button admin;
     private FirebaseAuth mAuth;
     FirebaseAuth auth = FirebaseAuth.getInstance();
     private String esadmin = "false";
@@ -41,7 +42,15 @@ public class MainActivity extends AppCompatActivity {
         botonPass = findViewById(R.id.btnResetPass);
         correo = findViewById(R.id.correo);
         contrasena = findViewById(R.id.contrasena);
+        admin=findViewById(R.id.button4);
         mAuth = FirebaseAuth.getInstance();
+        admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent a = new Intent(MainActivity.this, Administrar.class);
+                startActivity(a);
+            }
+        });
 
 
         botonPass.setOnClickListener(new View.OnClickListener() {
@@ -138,7 +147,6 @@ public class MainActivity extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                             correo.setText("");
                             contrasena.setText("");
-                            //updateUI(null);
                         }
                     }
                 });

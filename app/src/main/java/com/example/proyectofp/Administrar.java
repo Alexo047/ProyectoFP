@@ -41,12 +41,9 @@ public class Administrar extends AppCompatActivity {
     private Button buscar, crear, eliminar, entrarApp, modificar;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://proyectofp-23bb4-default-rtdb.europe-west1.firebasedatabase.app/");
-    //DatabaseReference myRef = database.getReference("message");
-
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
     Boolean existe = true;
-   // private DatabaseReference databaseReference;
 
     private ProgressDialog progressDialog;
     private String password;
@@ -60,30 +57,25 @@ public class Administrar extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         DatabaseReference databaseReference = database.getReference("Usuarios");
-/*        databaseReference.setValue("hola");
-
-
-        databaseReference.setValue("Usuarios");*/
-
-        // databaseReference = FirebaseDatabase.getInstance().getReference("Usuarios");
-
-        correo=findViewById(R.id.textoCorreo);
-        correo2=findViewById(R.id.textoCorreo2);
-        carnet=findViewById(R.id.textoCarnet);
-        swAdmin=findViewById(R.id.SwitchAdmin);
-        nombre=findViewById(R.id.textoNombre);
-        telefono=findViewById(R.id.textoTelefono);
-
-        buscar=findViewById(R.id.btnBuscar);
-        crear=findViewById(R.id.btnCrear);
-        eliminar=findViewById(R.id.btnEliminar);
-        entrarApp=findViewById(R.id.btnEntrarApp);
-        modificar=findViewById(R.id.btnModificar);
-
-        //correo2.setText(firebaseUser.getEmail());
 
 
 
+
+        //databaseReference.setValue("Usuarios");
+
+
+        correo = findViewById(R.id.textoCorreo);
+        correo2 = findViewById(R.id.textoCorreo2);
+        carnet = findViewById(R.id.textoCarnet);
+        swAdmin = findViewById(R.id.SwitchAdmin);
+        nombre = findViewById(R.id.textoNombre);
+        telefono = findViewById(R.id.textoTelefono);
+
+        buscar = findViewById(R.id.btnBuscar);
+        crear = findViewById(R.id.btnCrear);
+        eliminar = findViewById(R.id.btnEliminar);
+        entrarApp = findViewById(R.id.btnEntrarApp);
+        modificar = findViewById(R.id.btnModificar);
 
 
         progressDialog = new ProgressDialog(this);
@@ -95,23 +87,22 @@ public class Administrar extends AppCompatActivity {
                 String regex = "(?:[^<>()\\[\\].,;:\\s@\"]+(?:\\.[^<>()\\[\\].,;:\\s@\"]+)*|\"[^\\n\"]+\")@(?:[^<>()\\[\\].,;:\\s@\"]+\\.)+[^<>()\\[\\]\\.,;:\\s@\"]{2,63}";
 
 
-                final String correo2U= correo2.getText().toString().trim();
-                final String carnetU=carnet.getText().toString().trim();
-                final String nombreU=nombre.getText().toString().trim();
-                final String telefonoU=telefono.getText().toString().trim();
+                final String correo2U = correo2.getText().toString().trim();
+                final String carnetU = carnet.getText().toString().trim();
+                final String nombreU = nombre.getText().toString().trim();
+                final String telefonoU = telefono.getText().toString().trim();
                 final String password = correo2.getText().toString().trim();
                 final Boolean estadoAdmin = swAdmin.isChecked();
 
 
                 //final Switch swAdmin;
 
-                if(TextUtils.isEmpty(correo2U))
-                {
+                if (TextUtils.isEmpty(correo2U)) {
                     Toast.makeText(Administrar.this, "Debes escribir el correo", Toast.LENGTH_LONG).show();
                     correo2.requestFocus();
                     return;
                 }
-                if(!correo2U.matches(regex)){
+                if (!correo2U.matches(regex)) {
                     Toast.makeText(Administrar.this, "Formato de correo incorrecto", Toast.LENGTH_LONG).show();
                     correo2.requestFocus();
                     return;
@@ -124,13 +115,8 @@ public class Administrar extends AppCompatActivity {
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()){
+                                if (task.isSuccessful()) {
 
-                                    //String idUnico = databaseReference.push().getKey();
-
-                                    //UsuariosDTO usuariosDTO = new UsuariosDTO(correo2U, carnetU, estadoAdmin, nombreU, telefonoU);
-
-                                    ///databaseReference.child(correo2U).setValue(usuariosDTO);
                                     Map<String, Object> personaMap = new HashMap<>();
                                     personaMap.put("Carnet", carnetU);
                                     personaMap.put("Admin", estadoAdmin.toString());
@@ -147,7 +133,7 @@ public class Administrar extends AppCompatActivity {
                                     swAdmin.setChecked(false);
 
 
-                                }else{
+                                } else {
 
                                     Toast.makeText(Administrar.this, "No se pudo registrar el usuario", Toast.LENGTH_LONG).show();
                                 }
@@ -156,7 +142,6 @@ public class Administrar extends AppCompatActivity {
                             }
                         });
 
-                //if ()
 
             }
         });
@@ -166,66 +151,43 @@ public class Administrar extends AppCompatActivity {
             public void onClick(View view) {
 
 
+                final String correo2U = correo2.getText().toString().trim();
+                final String correoU = correo.getText().toString().trim();
 
-                final String correo2U= correo2.getText().toString().trim();
-                final String correoU= correo.getText().toString().trim();
-
-                if(TextUtils.isEmpty(correo2U))
-                {
+                if (TextUtils.isEmpty(correo2U)) {
                     Toast.makeText(Administrar.this, "Debes escribir el correo para eliminarlo", Toast.LENGTH_LONG).show();
                     correo2.requestFocus();
                     return;
                 }
 
-                if(TextUtils.isEmpty(correoU))
-                {
+                if (TextUtils.isEmpty(correoU)) {
                     Toast.makeText(Administrar.this, "Debes buscar el correo", Toast.LENGTH_LONG).show();
                     correo.requestFocus();
                     return;
                 }
 
-                if (!(correoU.contains(correo2U) && correo2U.contains(correoU)))
-                {
+                if (!(correoU.contains(correo2U) && correo2U.contains(correoU))) {
                     Toast.makeText(Administrar.this, "Los correos no coinciden", Toast.LENGTH_LONG).show();
                     correo.requestFocus();
                     return;
                 }
 
 
-
-
-
                 AlertDialog.Builder dialogoBorrar = new AlertDialog.Builder(Administrar.this);
                 dialogoBorrar.setTitle("¿Seguro que quieres borrar el usuario?").
                         setMessage("Al borrar este usuario se perderán todos sus datos y " +
-                            "no se podrán recuperar ¿Continuar eliminando el usuario?").
-                                setPositiveButton("Borrar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                        /*AuthCredential credential = EmailAuthProvider
-                                .getCredential(correo2U, correo2U);
-                        firebaseUser.reauthenticate(credential);
-                        Toast.makeText(Administrar.this, correo2U, Toast.LENGTH_LONG).show();*/
-
-                        databaseReference.child(correo2U.replace(".", ",")).removeValue();
-                        Toast.makeText(Administrar.this, "Usuario Eliminado", Toast.LENGTH_LONG).show();
-                        /*firebaseUser.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                "no se podrán recuperar ¿Continuar eliminando el usuario?").
+                        setPositiveButton("Borrar", new DialogInterface.OnClickListener() {
                             @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful())
-                                {
+                            public void onClick(DialogInterface dialogInterface, int i) {
 
-                                }else
-                                {
-                                    Toast.makeText(Administrar.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                                }
+
+                                databaseReference.child(correo2U.replace(".", ",")).removeValue();
+                                Toast.makeText(Administrar.this, "Usuario Eliminado", Toast.LENGTH_LONG).show();
+
+
                             }
-                        });*/
-
-
-                    }
-                });
+                        });
 
                 dialogoBorrar.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     @Override
@@ -239,8 +201,6 @@ public class Administrar extends AppCompatActivity {
                 alertDialog.show();
 
 
-
-
             }
         });
 
@@ -249,26 +209,20 @@ public class Administrar extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                final String correoU= correo.getText().toString().trim();
+                final String correoU = correo.getText().toString().trim();
 
-                if(TextUtils.isEmpty(correoU))
-                {
+                if (TextUtils.isEmpty(correoU)) {
                     Toast.makeText(Administrar.this, "El correo no puede estar vacío", Toast.LENGTH_LONG).show();
                     correo.requestFocus();
                     return;
                 }
 
 
-
-
-
-
                 databaseReference.child(correoU.replace(".", ",")).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                        if (!snapshot.exists())
-                        {
+                        if (!snapshot.exists()) {
                             Toast.makeText(Administrar.this, "El usuario no existe", Toast.LENGTH_LONG).show();
                             existe = false;
                             correo2.setText("");
@@ -278,8 +232,7 @@ public class Administrar extends AppCompatActivity {
                             swAdmin.setChecked(false);
 
 
-                        }else
-                        {
+                        } else {
                             //existe = true;
                             correo2.setText(correoU);
                             databaseReference.child(correoU.replace(".", ",")).child("Nombre").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -289,8 +242,7 @@ public class Administrar extends AppCompatActivity {
 
                                     if (!task.isSuccessful()) {
                                         Log.e("firebase", "Error al pillar el dato admin", task.getException());
-                                    }
-                                    else {
+                                    } else {
 
 
                                         String datoNombre = String.valueOf(task.getResult().getValue());
@@ -298,8 +250,6 @@ public class Administrar extends AppCompatActivity {
 
 
                                     }
-
-
 
 
                                 }
@@ -312,8 +262,7 @@ public class Administrar extends AppCompatActivity {
 
                                     if (!task.isSuccessful()) {
                                         Log.e("firebase", "Error al pillar el dato Carnet", task.getException());
-                                    }
-                                    else {
+                                    } else {
 
 
                                         String datoCarnet = String.valueOf(task.getResult().getValue());
@@ -321,7 +270,6 @@ public class Administrar extends AppCompatActivity {
 
 
                                     }
-
 
 
                                 }
@@ -334,8 +282,7 @@ public class Administrar extends AppCompatActivity {
 
                                     if (!task.isSuccessful()) {
                                         Log.e("firebase", "Error al pillar el dato Telefono", task.getException());
-                                    }
-                                    else {
+                                    } else {
 
 
                                         String datoTelefono = String.valueOf(task.getResult().getValue());
@@ -359,12 +306,10 @@ public class Administrar extends AppCompatActivity {
 
                                         String datoAdmin = String.valueOf(task.getResult().getValue());
 
-                                        if (datoAdmin.contains("true"))
-                                        {
+                                        if (datoAdmin.contains("true")) {
                                             swAdmin.setChecked(true);
 
-                                        }else
-                                        {
+                                        } else {
                                             swAdmin.setChecked(false);
                                         }
 
@@ -375,7 +320,6 @@ public class Administrar extends AppCompatActivity {
                         }
 
 
-
                     }
 
                     @Override
@@ -383,19 +327,6 @@ public class Administrar extends AppCompatActivity {
 
                     }
                 });
-
-/*                if (existe)
-                {
-
-                }*/
-
-
-
-
-
-
-
-
 
 
             }
@@ -405,36 +336,31 @@ public class Administrar extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                final String correoU= correo.getText().toString().trim();
-                final String correo2U= correo2.getText().toString().trim();
-                final String carnetU=carnet.getText().toString().trim();
-                final String nombreU=nombre.getText().toString().trim();
-                final String telefonoU=telefono.getText().toString().trim();
+                final String correoU = correo.getText().toString().trim();
+                final String correo2U = correo2.getText().toString().trim();
+                final String carnetU = carnet.getText().toString().trim();
+                final String nombreU = nombre.getText().toString().trim();
+                final String telefonoU = telefono.getText().toString().trim();
                 final String password = correo2.getText().toString().trim();
                 final Boolean estadoAdmin = swAdmin.isChecked();
 
-                if(TextUtils.isEmpty(correo2U))
-                {
+                if (TextUtils.isEmpty(correo2U)) {
                     Toast.makeText(Administrar.this, "Debes escribir el correo para buscarlo", Toast.LENGTH_LONG).show();
                     correo2.requestFocus();
                     return;
                 }
 
-                if(TextUtils.isEmpty(correoU))
-                {
+                if (TextUtils.isEmpty(correoU)) {
                     Toast.makeText(Administrar.this, "Debes escribir el correo", Toast.LENGTH_LONG).show();
                     correo.requestFocus();
                     return;
                 }
 
-                if (!(correoU.contains(correo2U) && correo2U.contains(correoU)))
-                {
+                if (!(correoU.contains(correo2U) && correo2U.contains(correoU))) {
                     Toast.makeText(Administrar.this, "Para cambiar un correo hay que eliminar el usuario", Toast.LENGTH_LONG).show();
                     correo.requestFocus();
                     return;
                 }
-
-
 
 
                 Map<String, Object> personaMap = new HashMap<>();
@@ -465,7 +391,6 @@ public class Administrar extends AppCompatActivity {
                         swAdmin.setChecked(false);
                     }
                 });
-
 
 
             }

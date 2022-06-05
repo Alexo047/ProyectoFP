@@ -13,6 +13,7 @@ Button BotonSesion1;
 Button BotonSesion2;
 Button BotonSesion3;
 Button BotonSesion4;
+Button btnVolver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ Button BotonSesion4;
         BotonSesion1= findViewById(R.id.BSesion1);
         BotonSesion2=findViewById(R.id.BSesion2);
         BotonSesion3=findViewById(R.id.BSesion3);
+        btnVolver=findViewById(R.id.Volver);
         BotonSesion4=findViewById(R.id.BSesion4);
         BotonSesion1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +50,13 @@ Button BotonSesion4;
             public void onClick(View view) {
                 Intent Sesion4 = new Intent(Rutina.this, Sesion4Cardio.class);
                 startActivity(Sesion4);
+            }
+        });
+        btnVolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent volver = new Intent(Rutina.this, principal.class);
+                startActivity(volver);
             }
         });
     }

@@ -188,5 +188,8 @@
     <string name="IntroducePass">Introduce la nueva contraseña</string>
     <string name="IntroducePass2">Introduzca de nuevo la nueva contraseña</string>
     <string name="DescripcionimgPrincipal">imagen principal de la aplicación</string>
+    <string name="Volver">Volver</string>
+    <string name="Sesiones">Sesiones de entrenamiento</string>
+    <string name="PerfilUsuario">Opciones de usuario</string>
 
 </resources>
