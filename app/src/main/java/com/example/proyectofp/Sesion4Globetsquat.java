@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 
 public class Sesion4Globetsquat extends AppCompatActivity {
+    //iniciar la pantalla
 
     Button BRealizarGlobet;
     Button BContinuarGlobet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //te continua las sesiones o te lleva a la explicación de Globetsquat
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sesion4_globetsquat);
         BRealizarGlobet=findViewById(R.id.BotonRealizarGlobet);

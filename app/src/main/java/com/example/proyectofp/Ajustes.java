@@ -20,12 +20,14 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Ajustes extends AppCompatActivity {
 
+    //inicio de la pantalla
+
     Button BirIMC;
     Button btnborrar;
     Button btncambiarPass;
     Button btnCerrarSesion;
 
-
+    //creo un objeto de autenticación y de base de datos
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://proyectofp-23bb4-default-rtdb.europe-west1.firebasedatabase.app/");
@@ -53,6 +55,7 @@ public class Ajustes extends AppCompatActivity {
                 startActivity(irIMC);
             }
         });
+        //borra el usuario y te lleva a la pantalla principal
         btnborrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,6 +66,8 @@ public class Ajustes extends AppCompatActivity {
                         .setPositiveButton("Borrar", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
+
+                                //boton positivo de borrar
 
                                 String email =firebaseUser.getEmail().toString().trim();
 
@@ -94,6 +99,7 @@ public class Ajustes extends AppCompatActivity {
                 dialogoBorrar.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        //boton negativo de borrar
 
                         dialogInterface.dismiss();
                     }
@@ -109,6 +115,7 @@ public class Ajustes extends AppCompatActivity {
         btncambiarPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //cambia la contraseña
 
                 Intent irCPass = new Intent(Ajustes.this, CambiarPass.class);
                 startActivity(irCPass);
@@ -120,6 +127,7 @@ public class Ajustes extends AppCompatActivity {
         btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //cierra la sesión del usuario
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(Ajustes.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

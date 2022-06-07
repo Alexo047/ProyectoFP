@@ -36,10 +36,13 @@ import java.util.Map;
 
 public class Administrar extends AppCompatActivity {
 
+    //Empieza la pantalla
+
     private EditText correo, correo2, carnet, nombre, telefono;
     private Switch swAdmin;
     private Button buscar, crear, eliminar, entrarApp, modificar;
 
+    //creo un objeto de autenticación y de base de datos
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://proyectofp-23bb4-default-rtdb.europe-west1.firebasedatabase.app/");
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
@@ -59,11 +62,6 @@ public class Administrar extends AppCompatActivity {
         DatabaseReference databaseReference = database.getReference("Usuarios");
 
 
-
-
-        //databaseReference.setValue("Usuarios");
-
-
         correo = findViewById(R.id.textoCorreo);
         correo2 = findViewById(R.id.textoCorreo2);
         carnet = findViewById(R.id.textoCarnet);
@@ -80,6 +78,7 @@ public class Administrar extends AppCompatActivity {
 
         progressDialog = new ProgressDialog(this);
 
+        // código para crear usuarios
         crear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,9 +92,6 @@ public class Administrar extends AppCompatActivity {
                 final String telefonoU = telefono.getText().toString().trim();
                 final String password = correo2.getText().toString().trim();
                 final Boolean estadoAdmin = swAdmin.isChecked();
-
-
-                //final Switch swAdmin;
 
                 if (TextUtils.isEmpty(correo2U)) {
                     Toast.makeText(Administrar.this, "Debes escribir el correo", Toast.LENGTH_LONG).show();
@@ -116,7 +112,7 @@ public class Administrar extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-
+                                    // Mapeo de los usuarios
                                     Map<String, Object> personaMap = new HashMap<>();
                                     personaMap.put("Carnet", carnetU);
                                     personaMap.put("Admin", estadoAdmin.toString());
@@ -146,6 +142,7 @@ public class Administrar extends AppCompatActivity {
             }
         });
 
+        //elimina los usuarios
         eliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -171,8 +168,7 @@ public class Administrar extends AppCompatActivity {
                     correo.requestFocus();
                     return;
                 }
-
-
+                //Mensaje de alerta para borrar los usuarios
                 AlertDialog.Builder dialogoBorrar = new AlertDialog.Builder(Administrar.this);
                 dialogoBorrar.setTitle("¿Seguro que quieres borrar el usuario?").
                         setMessage("Al borrar este usuario se perderán todos sus datos y " +
@@ -203,8 +199,7 @@ public class Administrar extends AppCompatActivity {
 
             }
         });
-
-
+        // Busca los usuarios
         buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -216,8 +211,7 @@ public class Administrar extends AppCompatActivity {
                     correo.requestFocus();
                     return;
                 }
-
-
+                //mira si el usuario existe
                 databaseReference.child(correoU.replace(".", ",")).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -233,8 +227,9 @@ public class Administrar extends AppCompatActivity {
 
 
                         } else {
-                            //existe = true;
+                            //si el usuario existe te pilla los datos
                             correo2.setText(correoU);
+                            //pilla nombre
                             databaseReference.child(correoU.replace(".", ",")).child("Nombre").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -254,7 +249,7 @@ public class Administrar extends AppCompatActivity {
 
                                 }
                             });
-
+                            //pilla carnet
                             databaseReference.child(correoU.replace(".", ",")).child("Carnet").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -274,7 +269,7 @@ public class Administrar extends AppCompatActivity {
 
                                 }
                             });
-
+                            // pilla telefono
                             databaseReference.child(correoU.replace(".", ",")).child("Telefono").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -293,7 +288,7 @@ public class Administrar extends AppCompatActivity {
 
                                 }
                             });
-
+                            //pilla admin
                             databaseReference.child(correoU.replace(".", ",")).child("Admin").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -331,7 +326,7 @@ public class Administrar extends AppCompatActivity {
 
             }
         });
-
+        //modifica los usuarios
         modificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -368,7 +363,7 @@ public class Administrar extends AppCompatActivity {
                 personaMap.put("Admin", estadoAdmin.toString());
                 personaMap.put("Nombre", nombreU);
                 personaMap.put("Telefono", telefonoU);
-
+                //los modifica con el comnado updateChildren
                 databaseReference.child(correo2U.replace(".", ",")).updateChildren(personaMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
@@ -378,7 +373,6 @@ public class Administrar extends AppCompatActivity {
                         nombre.setText("");
                         telefono.setText("");
                         swAdmin.setChecked(false);
-
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override

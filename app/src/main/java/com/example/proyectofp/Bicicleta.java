@@ -8,9 +8,11 @@ import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class Bicicleta extends AppCompatActivity {
+    //inicia la pantalla
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //te pone el video de Bicicleta
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bicicleta);
         VideoView videoview = findViewById(R.id.videoView);

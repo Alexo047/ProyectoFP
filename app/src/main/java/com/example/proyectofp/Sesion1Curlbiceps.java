@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 
 public class Sesion1Curlbiceps extends AppCompatActivity {
+    //inicia la pantalla
 
     Button RealizarBicepsCurl;
     Button ContinuarBicepsCurl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //te continua las sesiones o te lleva a la explicación de Curlbiceps
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sesion1_curlbiceps);
         RealizarBicepsCurl=findViewById(R.id.BotonRealizarCurlBiceps);

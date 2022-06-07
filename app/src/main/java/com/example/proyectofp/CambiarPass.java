@@ -16,10 +16,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class CambiarPass extends AppCompatActivity {
-
+    //inicia la pantalla
 
     EditText nuevaPass1, nuevaPass2;
     Button cambiaPass;
+    //inicio el usuario de firebase
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
     @Override
@@ -58,6 +59,7 @@ public class CambiarPass extends AppCompatActivity {
                     nuevaPass1.requestFocus();
                     return;
                 }
+                //si las dos contraseñas coinciden te la cambia
 
                 String newPassword = contrasena1;
                 user.updatePassword(newPassword).addOnCompleteListener(new OnCompleteListener<Void>() {

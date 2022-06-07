@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.text.DecimalFormat;
 
 public class CalcularIMC extends AppCompatActivity {
+    //inicia la pantalla
 
     Button BIMC;
     EditText TextoALtura, TextoPeso;
@@ -27,6 +28,7 @@ public class CalcularIMC extends AppCompatActivity {
         BIMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //te hace la operación de IMC
                 DecimalFormat decimalFormat = new DecimalFormat("#.0");
                 float ValorAltura= Integer.parseInt(TextoALtura.getText().toString());
                 float ValorPeso= Integer.parseInt(TextoPeso.getText().toString());

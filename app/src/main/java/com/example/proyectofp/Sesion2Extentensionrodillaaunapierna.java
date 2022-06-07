@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 
 public class Sesion2Extentensionrodillaaunapierna extends AppCompatActivity {
+    //iniciar la pantalla
 
     Button BRealizarExtensionaunapierna;
     Button BContinuarExtensionaunapierna;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //te continua las sesiones o te lleva a la explicación de Extentensionrodillaaunapierna
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sesion2_extentensionrodillaaunapierna);
         BRealizarExtensionaunapierna=findViewById(R.id.BotonRealizarExtension);

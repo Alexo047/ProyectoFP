@@ -8,9 +8,11 @@ import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class Globetsquat extends AppCompatActivity {
+    //iniciar la pantalla
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //te pone el video de Globetsquat
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_globetsquat);
 

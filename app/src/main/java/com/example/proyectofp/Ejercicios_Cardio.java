@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 public class Ejercicios_Cardio extends AppCompatActivity {
+    //inicia la pantalla
 
     ImageButton Bbicicleta;
     ImageButton Bcinta;
@@ -23,6 +24,7 @@ public class Ejercicios_Cardio extends AppCompatActivity {
         Bcinta=findViewById(R.id.ImagenCinta);
         Beliptica=findViewById(R.id.ImagenEliptica);
         BJumping=findViewById(R.id.ImagenJumping);
+        //te lleva a las pantallas de cardio
         Bbicicleta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

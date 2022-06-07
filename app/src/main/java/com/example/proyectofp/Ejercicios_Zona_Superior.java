@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class Ejercicios_Zona_Superior extends AppCompatActivity {
+    //inicia la pantalla
     private ImageButton imagenCurl;
     private ImageButton imagenremocb;
     private ImageButton imagenbancaplano;
@@ -37,10 +38,7 @@ public class Ejercicios_Zona_Superior extends AppCompatActivity {
         imagenDominada=findViewById(R.id.ImbDominadas);
         imagenehpress=findViewById(R.id.ImbEhPress);
         imagenremo=findViewById(R.id.ImbRemoAUnaMano);
-
-
-
-
+        //inicia cada pantalla de la zona superior
 
         imagenCurl.setOnClickListener(new View.OnClickListener() {
             @Override

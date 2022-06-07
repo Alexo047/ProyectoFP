@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 
 public class Sesion1Pulloverconmancuerna extends AppCompatActivity {
+    //iniciar la pantalla
 
     Button RealizaPullover;
     Button ContinuarPullover;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //te continua las sesiones o te lleva a la explicación de Pulloverconmancuerna
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sesion1_pulloverconmancuerna);
         RealizaPullover=findViewById(R.id.BotonRealizarPullover);

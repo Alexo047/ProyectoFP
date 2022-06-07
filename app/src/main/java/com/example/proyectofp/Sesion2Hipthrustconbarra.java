@@ -8,11 +8,13 @@ import android.view.View;
 import android.widget.Button;
 
 public class Sesion2Hipthrustconbarra extends AppCompatActivity {
+    //iniciar la pantalla
 
     Button terminars2;
     Button RealizarHipThrust;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //te termina la sesion o te lleva a la explicación de Hipthrustconbarra
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sesion2_hipthrustconbarra);
         terminars2=findViewById(R.id.botonTerminarS2);

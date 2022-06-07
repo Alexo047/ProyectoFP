@@ -14,6 +14,7 @@ import android.widget.Button;
 
 
 public class menu extends Fragment {
+    //inicia la pantalla del menu
 
     private Button botonEjercicios;
     private Button botonPrincipal;
@@ -31,7 +32,7 @@ public class menu extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_menu, container, false);
     }
-
+//se crea los botones y se les asocia las pantallas
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

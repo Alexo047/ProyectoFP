@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 
 public class Sesion4Sentadillaenmultipower extends AppCompatActivity {
+    //iniciar la pantalla
 
     Button BRealizarSentadilla;
     Button BContinuarSentadilla;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //te continua las sesiones o te lleva a la explicación de Sentadillaenmultipower
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sesion4_sentadillaenmultipower);
         BRealizarSentadilla=findViewById(R.id.BotonRealizarSentadilla) ;

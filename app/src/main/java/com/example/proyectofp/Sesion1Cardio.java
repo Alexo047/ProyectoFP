@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class Sesion1Cardio extends AppCompatActivity {
+    //inicia la pantalla
     Button BotonRealizarCardio;
     Button BotonContinuar;
 
@@ -17,6 +18,7 @@ public class Sesion1Cardio extends AppCompatActivity {
         setContentView(R.layout.activity_sesion1_cardio);
         BotonRealizarCardio=findViewById(R.id.BotonRealizarBicicleta);
         BotonContinuar=findViewById(R.id.BotonContinuarBicicleta);
+        //te continua las sesiones o te lleva a la explicación de cardio
         BotonRealizarCardio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

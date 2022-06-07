@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 
 public class Sesion1Aperturasbancoplano extends AppCompatActivity {
+    //inicia la pantalla
 
     Button RealizarAperturas;
     Button ContinuarAperturas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //te continua las sesiones o te lleva a la explicación de Aperturabancoplano
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sesion1_aperturasbancoplano);
         RealizarAperturas=findViewById(R.id.BotonRealizarAperturas);

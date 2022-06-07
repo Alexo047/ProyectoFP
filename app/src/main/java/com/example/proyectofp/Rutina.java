@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class Rutina extends AppCompatActivity {
+    //inicia la pantalla
 
 Button BotonSesion1;
 Button BotonSesion2;
@@ -24,6 +25,7 @@ Button btnVolver;
         BotonSesion3=findViewById(R.id.BSesion3);
         btnVolver=findViewById(R.id.Volver);
         BotonSesion4=findViewById(R.id.BSesion4);
+        //te lleva a cada una de las sesiones o si le das a volver a la pantalla principal
         BotonSesion1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

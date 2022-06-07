@@ -20,10 +20,6 @@
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".Registrarse"
-            android:exported="false"
-            android:screenOrientation="portrait"/>
-        <activity
             android:name=".CalcularIMC"
             android:exported="false"
             android:screenOrientation="portrait"/>

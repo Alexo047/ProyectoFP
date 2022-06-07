@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 public class Ejercicios_Zona_Inferior extends AppCompatActivity {
+    //inicia la pantalla
 
     ImageButton BPesomuertorodillasextendidas;
     ImageButton BHipThurst;
@@ -30,6 +31,7 @@ public class Ejercicios_Zona_Inferior extends AppCompatActivity {
         BZancadaHaciaAtras=findViewById(R.id.BotonZancadaHaciaAtras);
         BGlobetSquat=findViewById(R.id.BotonGlobetSquat);
         BGemeloAUnaPierna=findViewById(R.id.BotonGemeloAUnaPierna);
+        //te lleva a cada ejercicio de la zona inferior
         BPesomuertorodillasextendidas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

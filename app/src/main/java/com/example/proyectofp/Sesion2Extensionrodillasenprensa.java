@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 
 public class Sesion2Extensionrodillasenprensa extends AppCompatActivity {
+    //iniciar la pantalla
 
     Button BRealizarExtensioPrensa;
     Button BContinuarExtensionPrensa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //te continua las sesiones o te lleva a la explicación de Extensionrodillasenprensa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sesion2_extensionrodillasenprensa);
         BRealizarExtensioPrensa=findViewById(R.id.BotonRealizarPrensa);

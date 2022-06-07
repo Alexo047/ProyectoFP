@@ -8,11 +8,13 @@ import android.view.View;
 import android.widget.Button;
 
 public class Sesion1remoinclinado extends AppCompatActivity {
+    //iniciar la pantalla
     Button RealizarRemo;
     Button ContinuarRemo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //te continua las sesiones o te lleva a la explicación de Remoinclinado
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sesion1remoinclinado);
         RealizarRemo=findViewById(R.id.BotonRealizarRemoInclinado);

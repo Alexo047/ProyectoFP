@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 
 public class Sesion3Remoaunamano extends AppCompatActivity {
+    //iniciar la pantalla
 
     Button terminars3;
     Button realizarRemoaunamano;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //te termina la sesion o te lleva a la explicación de Remoaunamano
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sesion3_remoaunamano);
         terminars3=findViewById(R.id.botonTerminarS3);

@@ -7,12 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 
 public class Ejercicios extends AppCompatActivity {
+    //inicia la pantalla
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ejercicios);
     }
+
+    //te lleva a las pantallas con los ejercicios
     public void superior(View view)
     {
         Intent superior = new Intent(this, Ejercicios_Zona_Superior.class);

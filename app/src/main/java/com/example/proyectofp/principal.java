@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class principal extends AppCompatActivity {
+    //inicia la pantalla
     Button botonrutina;
 
     @Override
@@ -18,6 +19,7 @@ public class principal extends AppCompatActivity {
         botonrutina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //te lleva a la pantalla de rutina
                 Intent rutina = new Intent(principal.this, Rutina.class);
                 startActivity(rutina);
             }

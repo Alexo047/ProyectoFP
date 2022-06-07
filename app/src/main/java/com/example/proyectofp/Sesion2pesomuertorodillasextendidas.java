@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 
 public class Sesion2pesomuertorodillasextendidas extends AppCompatActivity {
+    //iniciar la pantalla
 
     Button BRealizarPesoMuerto;
     Button BContinuarPesoMuerto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //te continua las sesiones o te lleva a la explicación de pesomuertorodillasextendidas
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sesion2pesomuertorodillasextendidas);
         BRealizarPesoMuerto=findViewById(R.id.BotonRealizarPesoMuerto);

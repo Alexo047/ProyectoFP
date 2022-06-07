@@ -8,9 +8,11 @@ import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class Jumpingjacks extends AppCompatActivity {
+    //inicia la pantalla
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //te pone el video de Jumpingjacks
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jumpingjacks);
         VideoView videoview = findViewById(R.id.videoView);

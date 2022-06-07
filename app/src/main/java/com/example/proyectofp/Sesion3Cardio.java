@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 
 public class Sesion3Cardio extends AppCompatActivity {
+    //iniciar la pantalla
 
     Button BRealizarEliptica;
     Button BContinuarEliptica;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //te continua las sesiones o te lleva a la explicación de cardio
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sesion3_cardio);
         BRealizarEliptica=findViewById(R.id.BotonRealizarEliptica);

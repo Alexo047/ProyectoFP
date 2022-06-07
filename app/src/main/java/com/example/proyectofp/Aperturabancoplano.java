@@ -8,9 +8,11 @@ import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class Aperturabancoplano extends AppCompatActivity {
+    //inicia la pantalla
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //te pone el video de Aperturabancoplano
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aperturabancoplano);
         VideoView videoview = findViewById(R.id.videoView);

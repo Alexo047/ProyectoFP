@@ -8,9 +8,11 @@ import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class Sentadillaenmultipower extends AppCompatActivity {
+    //inicial la pantalla
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //te pone el video de Sentadillaenmultipower
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sentadillaenmultipower);
 

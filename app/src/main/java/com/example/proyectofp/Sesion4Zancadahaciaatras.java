@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 
 public class Sesion4Zancadahaciaatras extends AppCompatActivity {
+    //iniciar la pantalla
 
     Button BRealizarZancada;
     Button BContinuarZancada;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //te continua las sesiones o te lleva a la explicación de Zancadahaciaatras
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sesion4_zancadahaciaatras);
         BRealizarZancada=findViewById(R.id.BotonRealizarZancada);

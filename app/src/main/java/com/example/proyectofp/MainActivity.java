@@ -27,9 +27,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.security.Principal;
 
 public class MainActivity extends AppCompatActivity {
+    //inicia la pantalla
     Button botonPass;
     private EditText correo;
     private EditText contrasena;
+    //creo objeto de autenticacion y base de datos en firebase
     private FirebaseAuth mAuth;
     FirebaseAuth auth = FirebaseAuth.getInstance();
     private String esadmin = "false";
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
 
                 }
+                //si te has olvidado de la contraseña te envia un correo si el usuario existe
                 Toast.makeText(MainActivity.this, "Correo enviado a: " + correoU, Toast.LENGTH_LONG).show();
                 auth.sendPasswordResetEmail(emailAddress).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -79,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void iniciarSesion(View view) {
+        //si el usuario existe te inicia sesion en la app
 
         final String correoU = correo.getText().toString().trim();
         final String password = contrasena.getText().toString().trim();
@@ -100,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-
+                            // si es admin te lleva a la administracion de usuarios, si no lo es te lleva a la pantalla principal
                             final String correoU = correo.getText().toString().trim();
                             final String correoFinal = correoU.replace(".", ",");
                             FirebaseUser user = mAuth.getCurrentUser();
